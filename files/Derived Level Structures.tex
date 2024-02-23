@@ -1,0 +1,1521 @@
+
+\documentclass[12pt]{article}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{graphicx,psfrag}
+\usepackage{enumerate,placeins,wrapfig,booktabs,chngcntr}
+\usepackage[
+a4paper,
+text={160true mm,234true mm},
+top=30.5true mm,
+left=25true mm,
+head=5true mm,
+headsep=2.5true mm,
+foot=8.5true mm
+]{geometry}
+\usepackage{zhlipsum}
+\usepackage{longtable}
+\usepackage[all]{xy}
+\usepackage{latexsym}
+\usepackage{amsmath}
+\usepackage{mathrsfs}
+\usepackage{amsfonts}
+\usepackage{slashed}
+
+%%%%设置行间距
+\usepackage{setspace}
+\setstretch{1.2}
+
+%%%设置引用颜色
+\usepackage{hyperref}
+\hypersetup{
+	colorlinks,
+	citecolor=red,
+	filecolor=black,
+	linkcolor=black,
+	urlcolor=black
+}
+
+
+\newtheorem{theorem}{Theorem}[section] %{定理环境名}{标题}[主计数器名] 
+\newtheorem{axiom}[theorem]{Axiom}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheoremstyle{thry}% name
+{3pt}% Space above
+{3pt}% Space below
+{\normalfont}% Body font
+{}% Indent amount
+{\bfseries}% Theorem head font
+{}% Punctuation after theorem head
+{.5em}% Space after theorem head
+{}% Theorem head spec (can be left empty, meaning ‘normal’ )
+\theoremstyle{thry}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{construction}[theorem]{Construction}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{remark}[theorem]{Remark}
+\renewenvironment{proof}
+{\par \noindent \textbf{Proof.}}
+{ \par \hfill $\blacksquare$ \quad \par }
+
+
+\abovedisplayskip=0pt
+\belowdisplayskip=0pt
+
+
+
+\def  \ab       {\mathrm{ab}}
+\def  \Ab       {\mathbf{Ab}}
+\def  \Aut      {\mathrm{Aut}}
+\def  \PreAb    {\mathrm{PreAb}}
+\def  \affine   {\mathrm{affine}}
+\def  \Alg      {\mathrm{Alg}}
+\def  \Assoc    {\mathrm{Assoc}}
+\def  \Bun      {\mathrm{Bun}}
+\def  \colim    {\mathrm{colim}}
+\def  \CAlg     {\mathrm{CAlg}}
+\def  \Cdga     {\mathrm{Cdga}}
+\def  \Cat      {\mathbf{Cat}}
+\def  \CMon     {\mathbf{CMon}}
+\def  \crys     {\mathrm{crys}}
+\def  \dim      {\mathrm{dim}}
+\def  \et       {\acute{e}t}
+\def  \etale    {\acute{e}\text{tale}}
+\def  \Der      {\mathrm{Der}}
+\def  \Def      {\mathrm{Def}}
+\def  \Derived  {\mathrm{Derived}}
+\def  \CDiv     {\mathrm{CDiv}}
+\def  \Ell      {\mathrm{Ell}}
+\def  \End      {\mathrm{End}}
+\def  \Ext      {\mathrm{Ext}}
+\def  \Frob     {\mathrm{Frob}}
+\def  \Fun      {\mathrm{Fun}}
+\def  \Fin      {\mathrm{Fin}}
+\def  \fib      {\mathrm{fib}}
+\def  \Gpd      {\mathrm{Gpd}}
+\def  \Gal      {\mathrm{Gal}}
+\def  \holim    {\mathrm{holim}}
+\def  \hocolim  {\mathrm{hocolim}}
+\def  \Hom      {\mathrm{Hom}}
+\def  \Hilb      {\mathrm{Hilb}}
+\def  \Id       {\mathrm{Id}}
+\def  \Ind      {\mathrm{Ind}}
+\def  \ringtop  {\infty\Top^{\mathrm{loc}}_{\CAlg}}
+\def  \Isog     {\mathrm{Isog}}
+\def  \Lan      {\mathrm{Lan}}
+\def  \Level    {\mathrm{Level}}
+\def  \leftlim  {\underset{\longleftarrow}{\lim}}
+\def  \rightlim {\underset{\longrightarrow}{\lim}}
+\def  \LocSys   {\mathrm{LocSys}}
+\def  \Mor      {\mathrm{Mor}}
+\def  \Mod      {\mathrm{Mod}}
+\def  \Map      {\mathrm{Map}}
+\def  \Mfld     {\mathcal{M}\mathrm{fld}}
+\def  \Or       {\mathrm{Or}}
+\def  \Orb      {\mathrm{Orb}}
+\def  \op       {\mathrm{op}}
+\def  \pic      {\mathrm{pic}}
+\def  \Pic      {\mathrm{Pic}}
+\def  \PreStk   {\mathrm{PreStk}}
+\def  \Perf     {\mathrm{Perf}}
+\def  \Pol      {\mathcal{P}\mathrm{ol}}
+\def  \QCoh     {\mathrm{QCoh}}
+\def  \Ric      {\mathrm{Ric}}
+\def  \Rep      {\mathrm{Rep}}
+\def  \Sp       {\mathrm{Sp}}
+\def  \Set      {\mathbf{Set}}
+\def  \Spec     {\mathrm{Spec}}
+\def  \Spet     {\mathrm{Sp}\acute{e}t}
+\def  \Spa      {\mathrm{Spa}}
+\def  \Spf      {\mathrm{Spf}}
+\def  \Spc      {\mathrm{Spc}}
+\def  \SpDM     {\mathrm{SpDM}}
+\def  \Shv      {\mathrm{Shv}}
+\def  \Sch      {\mathrm{Sch}}
+\def  \Stk      {\mathrm{Stk}}
+\def  \Stab     {\mathrm{Stab}}
+\def  \supp     {\mathrm{Supp}}
+\def  \Top      {\mathbf{Top}} 
+\def  \Tor      {\mathrm{Tor}}
+\def  \Tors     {\mathrm{Tors}}
+\def  \Vect     {\mathrm{Vect}}
+
+
+\def  \ca       {\mathcal{A}}
+\def  \cb       {\mathcal{B}}
+\def  \cC       {\mathcal{C}}
+\def  \cd       {\mathcal{D}}
+\def  \ce       {\mathcal{E}}
+\def  \cf       {\mathcal{F}}
+\def  \cg       {\mathcal{G}}
+\def  \ch       {\mathcal{H}}
+\def  \ci       {\mathcal{I}}
+\def  \cj       {\mathcal{J}}
+\def  \ck       {\mathcal{K}}
+\def  \cl       {\mathcal{L}}
+\def  \cm       {\mathcal{M}}
+\def  \co       {\mathcal{O}}
+\def  \cp       {\mathcal{P}}
+\def  \cs       {\mathcal{S}}
+\def  \cu       {\mathcal{U}}
+\def  \cv       {\mathcal{V}}
+\def  \cx       {\mathcal{X}}
+\def  \cy       {\mathcal{Y}}
+\def  \cz       {\mathcal{Z}}
+
+
+\def  \bc       {\mathbb{C}}
+\def  \be       {\mathbb{E}}
+\def  \bF       {\mathbf{F}}
+\def  \bg       {\mathbb{G}}
+\def  \bh       {\mathbb{H}}
+\def  \bi       {\mathbb{I}}
+\def  \bl       {\mathbb{L}}
+\def  \bq       {\mathbf{Q}}
+\def  \br       {\mathbf{R}}
+\def  \bs       {\mathbb{S}}
+\def  \bt       {\mathbb{T}}
+\def  \bw       {\mathbb{W}}
+\def  \bz       {\mathbf{Z}}
+
+
+\def  \sc       {\mathscr{C}}
+\def  \sl       {\mathscr{L}}
+\def  \sm       {\mathscr{M}}
+\def  \sp       {\mathscr{P}}
+\def  \ss       {\mathscr{S}}
+
+
+
+
+\def  \fd       {\mathfrak{D}}
+\def  \fx       {\mathfrak{X}}
+
+
+
+\begin{document}
+\title{Derived Level Structures}
+\author{Xuecai Ma}
+\maketitle
+
+
+
+
+\begin{abstract}
+We study the representability of relative Cartier divisor  in the context of spectral algebraic geometry. Base on this, we define the derived level structures in spectral algebraic geometry.  We prove the relative representability of derived level structures. Combining derived level structures and derived deformations developed by Lurie, we construct the non-even periodic higher categorical lifts of Lubin-Tate towers.
+\end{abstract}
+
+\tableofcontents
+
+
+
+
+
+
+\section{Introduction}
+
+
+We now give an outline of this paper. In the second section, we define the derived isogeny and prove that the  kernel of a derived isogeny in some cases  have the same phenomenon as  the classical case.  By an  isogeny of spectral abelian varities, we mean a morphism $f: X\to Y$ which is finite flat and geometric surjective.  We can find that if the  underlying map $f^{\heartsuit}:  X^{\heartsuit} \to X^{\heartsuit}$ of a derived isogeny $f: X \to Y$ determine a  locally constant discrete sheaf, then  $\fib f$  is a homotopy locally constant sheaf, see lemma \ref{locally constant}. This gives us an hint about how to defined derived level structures.
+
+In the third section, we define the relative Cartier divisor in the context of spectral algebraic geometry. For a spectral Deligne-Mumford stack $X/S$, a relative Cartier divisor is a morphism $D \to S$ of spectral Deligne-Mumford stacks such that $D \to X$ is a closed immersion, the ideal sheaf of D is a line bundle over X, and the morphism $D \to S$ is flat, proper and locally  almost of finite presentation.  We then use Lurie's representability theorem prove that the relative Cartier divisor is representable by a spectral Deligne-Mumford stack.
+
+In the forurth section. We define the derived level structures of spectral elliptic curves. Roughly speaking, a derived level structure of a spectral elliptic curves E over an $\be_{\infty}$-ring R is just a  relative Cartier divisor
+$$
+D\to E
+$$
+satisfying its restriction to  the heart is an ordinary level structure. We prove that the moduli problem associated with derived level structure is representable.
+
+
+\textbf{Theorem A.}	Let $E/R$ be a spectral elliptic curve, then the functor
+	\begin{eqnarray*}
+		\Level_{E/R} & :& \CAlg \to \cs  \\
+		&  &	R' \mapsto \Level(\ca , E_{R'}/R')
+	\end{eqnarray*}
+	is represented by a affine spectral Deligne-Mumford stack which is locally of finite presentation over $R$. 
+
+
+
+In the second part of fourth section, we define the derived level structures of spectral p-divisible groups. The definition is similar to cases of spectral elliptic curves. We use relative Cartier divisors to control the higher homotopy.
+
+In the last section, we give some applications of derived level structures. We consider the spectral deformations with derived level structures.  In \cite{lu-EC2}, Lurie consider the spectral  deformations of a classical  formal group. As we have the concept of derived level structure, it is natural to consider the moduli of spectral deformations with derived level structures. 
+Let $G_0$ be a  p-divisible group over a  perfect $F_p$ algebra $R_0$. We consider the following functor
+\begin{eqnarray*}
+	\cm^{or}_{A^k} &: &\CAlg^{cn}_k \to \cs  \\
+	&  & R \to  \mathrm{DefLevel}^{or}(G_0,R, \Level(A))
+\end{eqnarray*}
+where $\mathrm{DefLevel}^{or}(G_0,R, A)$ is  the $\infty$-category whose objects are quaternions $(G, \rho, \eta)$
+\begin{enumerate}
+	\item G is a  spectral p-divisible group over R.
+	\item $\rho$ is a $G_0$ taggings of $R$.
+	\item e is an orientation of the connected component of G.
+	\item $\eta:  D\to G$ is a derived level structure.
+	
+\end{enumerate}
+
+
+\textbf{Theorem B.} The functor $\cm^{or}_{A^k}$ is representable by a affine spectral Deligne-Mumford stack $\Spet \cj \cl$, where $\mathcal{JL}$ is a finite $R^{or}_{G_0}$ algebra.
+
+
+
+We call the resulting  spectrum Jacquet-Langlands spectrum, this spectrum admits a natural action of $GL_n(Z/p^m Z) \times \Aut G_0$.  The $\pi_0$ of this spectrum can realize the  Jacquet-Langlands correspondence,  and we hope to realize a topological Jacquet-Langlands correspondence.  This is a different way to realize  topological version of Jacquet-Langlands correspondence comparing the way using the degenerating level structures, see \cite{Salch2023elladicTJ}.
+
+
+ 
+
+\section*{Notations}
+\begin{enumerate} 
+	\item  $\CAlg$ denote the $\infty$-category of $E_{\infty}$-rings, and $\CAlg^{cn}$ denote the $\infty$-category of connective $E_{\infty}$-rings.
+	\item  $\cs$ denote the $\infty$-category of spaces ($\infty$-groupoids).
+	\item  For a spectral Deligne-Mumford stack $X =(\cx, \co_{\cx})$, we let $ \tau_{\leq n}X = (\cx, \tau_{\leq n} \co_{\cx})$ denote its n-truncation.
+	\item  For a spectral Deligne-Mumford stack $X =(\cx, \co_{\cx})$, we let $X^{\heartsuit} = (\cx^{\heartsuit}, \tau_{\leq 0} \co_{\cx})$ denote its underlying ordinary Deligne-Mumford stack.
+	\item By a spectral Deligne-Mumford stack X over R, we mean a map of spectral Deligne-Mumford stacks $X \to \Spet R$.
+	\item  X be a spectral Deligne-Mumford stack over R, let S be an R-algebra. We some times let $X  \times_R S$ denote the product $X \times_{\Spet R} \Spet S$.
+	\item  $\cm_{ell}$ denote the spectral Deligne-Mumford stack of spectral elliptic curves, which is defined in \cite{lu-EC1}.
+	\item  $\cm^{cl}_{ell}$ denote the classical Deligne-Mumford stack of classical elliptic curves.
+	
+\end{enumerate}
+
+
+\textbf{Acknowledgements:} This paper is finished during my PhD study. I thanks my advisor Yifei Zhu for his advising and helping in my entire PhD periods, especially for the discussions about ideas of derived level structures. I thanks Fei Liu for his discussion about some proofs and ideas in this paper. I thanks Jing Liu, Guozhen Wang, Jack Morgan Davies, Yingxin Li, Qingrui Qu for helpful discussion about ideas in this paper.
+
+
+
+
+\section{Isogenies of Spectral Elliptic Curves}
+
+
+\quad To define derived level structures, the first question is what the higher categorical analogue of finite abelian groups are? We first recall some finiteness conditions in $\be_{\infty}$-rings context.  
+
+
+Let A be an $\be_{\infty}$-ring, M be an A-module. We say M is
+\begin{enumerate}
+	\item perfect, if it is an  compact object of $L \Mod_R$.
+	\item almost perfect, if there exits a integer k such that  $M \in (L\Mod_R)_{\geq k}$ and M is an almost perfect object of $ (L\Mod_R)_{\geq k}$.
+	\item perfect to order n  if for every filtered diagram $\{N_{\alpha}\}$ in $(L\Mod_A)_{\leq 0}$, the canonical map $\underset{\rightarrow \alpha}{\lim}  \Ext^{i}_A (M, N_{\alpha})  \to  \Ext^i_A(M,\underset{\rightarrow \alpha}{\lim}  N_{\alpha} )$ is injective for $i=n$ and bijective for $i \leq n$. 
+	\item finitely n-presented if M is  n-truncated and perfect to order (n+1).
+	\item finite generated, if it is perfect  to order 0.
+\end{enumerate}
+
+
+And when we  consider the  finite condition on algebra.  We say a morphism $\phi: A \to B$ of connective $\be_{\infty}$-rings  is
+
+\begin{enumerate}
+	
+ \item finite presentation if B belongs to the smallest full subcategory of $\CAlg_{A}^{free}$ and is stable under finite colimits.  
+ \item locally of finite presentation if B is a compact object of $\CAlg_A$.  
+ 
+ \item almost of finite presentation if A is an almost compact object of $\CAlg_A$, that is,  $\tau_{\leq n}B$ is a compact object of $\tau_{\leq n}\CAlg_A$ for all $n \geq 0$. 
+ 
+ \item  finite generation to order n if the following conditions holds:
+
+Let $\{C_{\alpha}\}$ be a filtered diagram of connective $\be_{\infty}$-rings over A having colimit C. Assume that each $C_{\alpha}$ is n-truncated and that each of the transition maps $\pi_n C_{\alpha} \to \pi_n C_{\beta}$ is a monomorphism. Then the canonical map
+$$
+\lim_{\alpha} \Map_{\CAlg_A}(B, C_{\alpha}) \to \Map_{\CAlg_A}(B, C)
+$$ 
+is a homotopy equivalence.
+
+\item  finite type if it is of  finite generation to order 0.  
+
+\item  finite  if B is a finitely generated as an A-module.
+
+
+
+\end{enumerate}
+\begin{proposition} \cite[Proposition 2.7.2.1, Proposition 4.1.1.3]{lu-SAG}
+	Let $\phi: A \to B$ be a morphism of connective $\be_{\infty}$-rings.. Then The following conditions are equivalent.
+	\begin{enumerate}
+		\item  $\phi$ is of finite (finite type).
+		\item  The commutative ring $\pi_0 B$ is finite (finite type) over $\pi_0 A$.
+	\end{enumerate}
+	
+\end{proposition}
+
+
+
+
+\begin{definition}\cite[Definition 4.2.0.1]{lu-SAG}
+	Let $f: X \to Y$ be a morphism of spectral Deligne-Mumford Stack. We say that f is   locally of finite type, (locally of finite genreration to order n, locally almost of finite presentation, locally of finite presentation) if the following conditions is satisfied: for every   commutative diagram
+	$$
+	\xymatrix{
+		\Spet B \ar[r]  \ar[d]  &  X \ar[d]^{f} \\
+		\Spet A  \ar[r]   &   Y   \\	
+	}
+	$$
+	where the horizontal morphisms are \'etale, the $\be_{\infty}$-ring B is finite type (finite generation to order n, almost of finite presentation, locally of finite presentation) over A.
+\end{definition}
+
+
+\begin{definition}\cite[Definition 5.2.0.1]{lu-SAG}
+	Let $f: (X, \co_X )\to (Y, \co_Y)$ be a morphism of spectral Deligne-Mumford stacks, we say f is finite, if the following conditions hold
+	\begin{enumerate}
+		\item  f is  affine.
+		\item  The push-forward is $f_* \co_X$ is perfect to order 0 as a $\co_Y$ module. 
+	\end{enumerate}
+\end{definition}
+
+
+\begin{remark} \label{finite}
+By the \cite[Example 4.2.0.2]{lu-SAG},  A morphism $f: X \to Y$ of spectral Deligne-Mumford stack is locally of finite type if the underlying map of spectral Deligne-Mumford stacks is locally of finite type in the sense of ordinary algebraic geometry. 
+
+And by \cite[ 5.2.0.2]{lu-SAG}, A morphism of  $f: X \to Y$  is finite if
+ the underlying map  $f^{\heartsuit} : X^{\heartsuit} \to Y^{\heartsuit}$ is finite.  If  X and Y are spectral algebraic spaces, then f is finite is equivalent to $f^{\heartsuit}$ is finite is the sense of ordinary algebraic geometry.
+
+
+\end{remark}
+We recall that a morphism $f: X \to Y$ of spectral Deligne-Mumford stacks is surjective if for every field k and  any map $\Spet k \to Y$, the fiber product $\Spet k \times_Y X$ is nonempty \cite[Definition 3.5.5.5]{lu-SAG}.
+
+
+\begin{definition}
+	Let $f: X \to Y$ be a morphism of spectral abelian varieties over a connective $\be_{\infty}$-ring R, we say f is an isogeny if it is finite, flat and surjective.
+\end{definition}
+
+\begin{lemma} 
+	Let $f: X \to Y$ be a morphism of spectral abelian varieties, then $f^{\heartsuit}: X^{\heartsuit} \to Y^{\heartsuit}$ is an isogeny in the classical sense.
+\end{lemma}
+\begin{proof}
+	In classical abelian varieties, $f^{\heartsuit}$ isogeny means $f^{\heartsuit}$ is surjective and $\ker f^{\heartsuit}$ is finite. But it is equivalent  to $f^{\heartsuit}$ is finite, flat and surjective  \cite[Proposition 7.1]{milne1986abelian}. And it is easy to see that $f^{\heartsuit}$ is finite, flat. We only need to prove that $f^{\heartsuit}$ is surjective.  
+	
+	For every morphism $|\Spec k| \to |Y^{\heartsuit}|$, this correspond to  a morphism $\Spet k \to Y^{\heartsuit}$, by the inclusion-truncation adjunction \cite[Proposition 1.4.6.3]{lu-SAG}, this corresponds to a morphism $\Spet k \to X$. By the  definition of  surjective, we get a commutative diagram
+	$$
+	\xymatrix{
+	\Spet k'  \ar[d]  \ar[r]  &  X  \ar[d]   \\
+	\Spet  k   \ar[r]       &   Y  \\
+	}
+	$$
+	The upper horizontal morphism corresponds to a morphism $\Spet k' \to X^{\heartsuit}$ by inclusion-truncation adjunction. On the underlying topological space level, this corresponds to  a point $|\Spet k | \to |Y^{\heartsuit}|$. It is clear that this point in $|Y^{\heartsuit}|$ is a preimage of $|\Spet k|$ in $X^{\heartsuit}$. So $f^{\heartsuit}$ is surjective. 
+\end{proof}
+
+
+\begin{lemma}
+	Let $f: X \to Y$ be an isogeny of spectral elliptic curves over a connective $\be_{\infty}$-ring R, then $\mathrm{fib}(f)$ exists and  is a finite and  flat  nonconnective spectral Deligne-Mumford stack over R. 
+\end{lemma}
+\begin{proof}
+	By \cite[Proposition 1.14.1.1]{lu-SAG}, the finite limits of nonconnective spectral Deligne-Mumford stack exists, so we can define fib(f). We consider the following diagram
+	$$
+	\xymatrix{
+	\fib(f) \ar[r]  \ar[d]^{f'}  &  X \ar[d]^{f}  \ar[rdd]  &  \\
+	\ *       \ar[r]   \ar[rrd]^{i}  &  Y   \ar[rd]    &   \\
+	                    &                 &   \Spet R  \\
+	}
+	$$
+	where the square is a pull-back diagram. We find that $\fib(f)$ is  over $\Spet R$. By \cite[Remark 2.8.2.6]{lu-SAG}, $f': \fib(f) \to *$ is flat since it is a pull-back of  a flat morphism. Obviously $i: * \to \Spet R$ is flat, so by \cite[Example 2.8.3.12]{lu-SAG} (Being flat morphism is local on the source with respect  to the flat topology), $i \circ f' : \fib(f) \to \Spet R$ is flat. 
+	
+	Next, we show $\ker f$  is finite over R.  Since $\ *,X,Y$ are all spectral algebraic spaces, so we have $\fib f$ is also a spectral algebraic space.  And $\Spet R$ is an algebraic space \cite[Example 1.6.8.2]{lu-SAG}. By the above remark \ref{finite}, we only need to prove that  the underlying morphism  is finite.  The truncation functor is a right adjoint , so preserve limits. So we get a  pull-back diagram
+	$$
+	\xymatrix{
+	\fib(f)^{\heartsuit} \ar[r]  \ar[d]  &  X^{\heartsuit}  \ar[d]   \\
+   \ *   \ar[r]                    &    Y^{\heartsuit} \\
+	}
+	$$ 
+	
+	So we are reduced to prove that for an isogeny  $f: X \to Y$ of ordinary abelian varieties over a  commutative  ring R. $\ker f$ is finite over R.   We consider the map factorisation $\ker f \to * \to R$.  $\ker f \to *$ is finite since it is a pull-back of finite morphism. And $* \to \Spet R$ is quasi-finite. we can choose a field $\Omega$ and a morphism $R \to \Omega$ such that $\Spec \Omega  \simeq * \to  \Spec R$ is closed, so proper , and hence finite. So by composition, we get $\ker f \to \Spec R$ is finite.
+	 
+\end{proof}
+
+
+ 
+\begin{lemma} \label{locally constant}
+	Let $f_N: E \to E$ be an isogeny of spectral elliptic  curves over R,  such that the underline map of ordinary elliptic curve is the multiplication $N$ map, $N: E^{\heartsuit} \to E^{\heartsuit}$.  Then $\fib f$ is  finite locally free of rank N in the sense of \cite[Definition 5.2.3.1]{lu-SAG}. And moreover if $N$ is invertible in  $\pi_0 R$, then $\fib f$ is a locally constant \'etale sheaf.
+\end{lemma}
+
+\begin{proof}
+	By \cite[Theorem 2.3.1]{katz1985arithmetic}, we know that $N: E^{\heartsuit} \to E^{\heartsuit}$ is locally free of rank N in the classical sense. When $N$ is invertible in $ \pi_0 R$, then $\ker N$ is locally constant $\etale$ sheaf.  $\fib(f_N)$ is a spectral algebraic space which is  finite and flat and its underlying map $\fib(f_N)^{\heartsuit} = \ker N$ is  locally free of rank N. $f_N$ is finite by the above theorem. We need to  prove that  $ \fib f_N  \to \Spet R$ is  locally free of rank N.  But $\ker f_N$ is finite and  flat, so is affine. We are reduce to  prove $f_N: \Spet S \to \Spet R$  is locally free, for $\Spet S$ is an affine substack of $\fib f _N$.   This is equivalent  to prove that  $R \to S$ is locally free  of rank N in the sense of \cite[Definition 2.9.2.1]{lu-SAG}.  So we need to prove that
+	\begin{enumerate}
+		\item  S is a  locally free of finite rank over R.(By \cite[Proposition 7.2.4.20]{lu-HA}, this is equivalent to say S is a flat and almost perfect R-module.)
+		\item  For every $\be_{\infty}$-ring  maps $R \to k$, the vector space $\pi_0 (M \otimes_R k)$ is a N-dimensional k-vector space.
+	\end{enumerate}
+	
+	 For (1), we know that $\pi_0 S$ is projective  $\pi_0 R$-module, and  S is a flat R-module, so by \cite[Proposition 7.2.2.18]{lu-HTT}, S is a projective R-module.  And since $\pi_0 S$ is a finitely generate R-module, so by \cite[Corollary 7.2.2.9]{lu-HA}, S is a retract of a finitely generated free R-module M, so is locally free of finite rank.
+	 
+	 For (2), $\pi_0 (k \otimes_R M)$， since R and M are connective, by \cite[Corollary 7.2.1.23]{lu-HA}, we get $\pi_0(k \otimes_R M) \simeq k \otimes_{\pi_0 R} \pi_0 M $ is a rank N k-vector space ($\pi_0 M$ is rank N  free $\pi_0 R$ module).
+	 
+	 We next show that if N is invertible in $\pi_0 R$, then $\fib f$ is a locally constant sheaf.  By the above discussion, $\fib f$ is spectral Deligne-Mumford stack,  so the associated functor points $\fib_f: \CAlg_R  \to S$ is nilcomplete and locally of almost finite presentation.  	By \cite[Theorem 2.3.1]{katz1985arithmetic}, $\fib_f|_{\CAlg_{\pi_0 R}^{\heartsuit}}$  is a locally constant sheaf,  the desired results follows form the following lemma. 
+\end{proof}
+
+
+
+
+\begin{lemma}\label{constant}
+	Let $\cf \in \Shv^{\et}(\CAlg^{cn}_R)$,  and is nilcomplete, locally of almost finite presentation and $\cf|_{(\CAlg^{cn}_R)^{\heartsuit}}$ is  the associated sheaf of constant presheaf valued on A. Then $\cf$ is a homotopy locally constant sheaf (i.e., sheafification of  a homotopy constant presheaf). 	
+\end{lemma}	
+
+\begin{proof}
+	We choose a  $\etale$ cover $U^0_{i}$ of $\pi_0 R$, such that $\cf|_{U^0_{i}}$ is a constant sheaf for each i.	By \cite[Theorem 7.5.1.11]{lu-HA}, this corresponds  to an $\etale$ cover $U_i \to R$ such that $\pi_0 U_i = \pi_0 U^0_i$.
+ We consider the following diagram
+	$$
+	\xymatrix{
+	\tau_{\leq 0} R    \ar[r] \ar[d]  &  \tau_{\leq 0} U  \ar[d]\\
+	 \tau_{\leq n}R    \ar[r]              &  \tau_{\leq n}   U
+}
+	$$
+	which is push-out diagram, since $U_i$ is an \'etale  $R$ algebra. This is a  colimit diagram in $\tau_{\leq n} \CAlg_R$.  $\cf$ is  a sheaf  of locally of almost finite prsentation, so we get push-out diagram
+	$$
+	\xymatrix{
+	\cf(\tau_{\leq 0} R)   \ar[r] \ar[d]  &  \cf(\tau_{\leq 0} U_i \ar[d])\\
+	 \cf (\tau_{\leq n}R)  \ar[r]              &   \cf(\tau_{\leq n}U_i)
+	}
+	$$
+	
+For each i, we have such diagram.  Without loss of generality, we can assume each $U_i$ is connective.  So $\cf(\tau_{\leq 0}U_i)$ are always same for all i.  That means we   $\cf( \tau_{\leq n} U_i)$ are all equivalence.  But we have $\cf$ is nicomplete, that means $\cf(U_i)  \simeq \colim \cf(\tau_{\leq n} U_i)$.  So we get all $\cf(U_i)$ are homotopy equivalence.
+\end{proof}
+
+
+
+
+
+
+
+
+\section{Relative Cartier Divisors}
+
+\quad In the section, we will define the relative Cartier divisor in the context of Spectral Algebraic Geometry. And we use Lurie's spectral Artin's representability theorem to prove that relative Cartier divisor is representable in some good cases. We first recall the following spectral Artin's representability theorem.
+\begin{theorem} \cite[Theroem 18.3.0.1]{lu-SAG}
+	Let $X: \CAlg^{cn} \to \cs$ be a functor, if we have a natural transformation $f: X \to \Spec R$, where R is a Noetherian $\be_{\infty}$-ring and $\pi_0 R$ is a Grothendieck ring. For $n \geq 0$, X is representable by a spectral Deligne-Mumford stack which is locally almost of finite presentation over R if and only if the following conditions are satisfied:
+	\begin{enumerate}
+		\item For every discrete commutative ring $R_0$, the space $X(R_0)$ is n-truncated.
+		\item The functor X is a sheaf for the \'etale topology.
+		\item The functor X is nilcomplete, infinitesimally cohesive, and integrable.
+		\item The functor X admits a connective cotangent complex $L_X$.
+		\item The natural transformation f is locally almost of finite presentation.
+	\end{enumerate}	
+\end{theorem}
+
+For a locally spectrally topoi $X=(\cx, \co_x)$,  we can consider its functor of points
+$$
+h_X:  \infty \Top^{loc}_{\CAlg} \to \cs, \quad   Y \mapsto \Map_{\ringtop}(Y，X)
+$$
+By \cite[Remark 3.1.1.2]{lu-SAG}, the closed immersion of locally spectrally ringed topos $f: X=(\cx, \co_{\cx}) \to Y=(\cy, \co_{\cy})$  corresponds to morphism of sheaves of connective $\be_{\infty}$-rings $\co_{\cx} \to f_* \co_{\cy} $ over $\cx$ such that $\pi_0\co_{\cx} \to  \pi_0f_* \co_{\cy} $ is surjective. We consider the the fiber  of this map $\fib f$. For a closed immersion $f: D \to X$ of spectral Deligne-Mumford stack, we let $I(D)$ denote $\fib(f)$, called the ideal sheaf of $D$.
+
+
+
+
+Fro convenience, in the following, we only consider the base stack is affine, that is $S = \Spet R$ for a connective $\be_{\infty}$-ring R. To prove the relative representability, we need the representability of the Picard functor. If we have  a map $f: X \to \Spet R$ of spectral Deligne-Mumford stack, 
+we define a functor 
+$$
+\sp ic_{X/R}: \CAlg^{cn}_R \to \cs, \quad    R' \mapsto  \sp ic(\Spet R' \times_{\Spet R } X)
+$$
+If we suppose that  f admits a section $x: \Spet R \to X$. Then pullback along x determines a natural transformation of functors $\sp ic(X/R) \to \sp ic _{R/R}$. We denote the fiber of this map by 
+$$
+\sp ic^x_{X/R}: \CAlg^{cn}_R \to \cs
+$$
+
+\begin{theorem}\cite[Theorem 19.2.0.5]{lu-SAG}
+	Let $f: X \to \Spet R$ be a map spectral algebraic spaces which is flat, proper, locally almost of finite presentation, geometrically reduced, and geometrically connected. For any section $x: \Spet R \to X$, the functor $\sp ic^x_{X/R}$ is representable by a spectral algebraic space which is quasi-separated and locally of finite presentation of R.
+\end{theorem}
+
+ In the classical case, the relative Cartier divisor scheme is a open subscheme of the Hilbert scheme \cite{kollar2013rational}. But in the derived case, the Hilbert functor is representable by a spectral algebraic space \cite[Theorem 8.3.3]{lurie2004derived}, it is hard to say relation to say the relation between them. Will directly study  relative Cartier divisors in the derived world.
+
+
+
+
+
+
+
+\begin{definition}
+	We let $\CDiv(X/S)$ denote the $\infty$-category of closed immersions $D \to X$, such that D is flat, proper, locally almost of finite presentation over S and  the associated ideal sheaf of D is a line a bundle over X.
+\end{definition}
+
+
+\begin{lemma}\label{cartdiv base change}
+	Let $X/S$ be a spectral Deligne-Mumford stacks, and $T \to S$ be a map of spectral Deligne-Mumford stacks.
+	 Suppose we have a relative Cartier divisor $i:D \to X$, then $D_T$ is a relative Cartier divisor of $X_T$.
+\end{lemma}
+\begin{proof}
+	This is easy to see, we just notice that $D_T$ is still closed immersion of  $X_T$ \cite[Corollary 3.1.2.3]{lu-SAG}. And after base change, $D_T$ is flat, proper, locally almost of finite presentation over $T$. The only thing we need to worry is that  whether $I(D_T)$ is  a line bundle over $X_T$? But this is also true. Since we have a fiber sequence
+	$$
+  	I(D)  \to \co_X  \to  \co_D 
+	$$
+	after applying the morphism $f^*:  \Mod_{ \co_{X_T}} \to  \Mod_{ \co_{X}}$, due to the flatness of D. We get fiber sequence
+	$$
+   f^*(I(D)) \to  \co_{X_T} \to   \co_{D_T}
+	$$
+	So we get $I(D_T)$  is just $f^*{I(D)}$, so is invertible.
+\end{proof}
+
+Before we start the prove of represenability of relative Cartier divisor,  we need a lemma for computing the cotangent complex of relative Cartier divisor.
+
+\begin{lemma}
+	Let $f:X \to \Spet R$ be a morphism of spectral Deligne-Mumford stack.  For a connective $R$-module M, then  the  $\infty$-categories of  Deigne-Mumford stacks  $X'$  with  a morphism $X \to  \Spet (R \oplus M)$ such that  fitting into the following pull back diagram 
+	$$
+	\xymatrix{
+	X \ar[r] \ar[d]  &  X'  \ar[d]  \\
+	\Spet R   \ar[r]    &  \Spet R \oplus M
+	}
+	$$
+	is  a Kan complex,  which is canonically equivalent to the mapping space $\Map_{\QCoh}(L_{X/Y}, \Sigma f^* M)$,  and moreover if f is flat, proper and locally of almost finite presnetation, then any such $f': X' \to S[M]$ is flat, proper and locally almost of finite presentation.
+\end{lemma}
+
+\begin{proof}
+	The first part of this lemma is just \cite[Proposition 19.4.3.1]{lu-SAG}, and the second part is just \cite[Corollary 19.4.3.3]{lu-SAG}
+\end{proof}
+
+\begin{proposition}\cite[Proposition 16.3.2.1]{lu-SAG} \label{Deformation of Stack}
+	Suppose that we are given a pushout diagram of spectral Deligne-Mumford stacks $\sigma$:
+	$$
+	\xymatrix{
+		X_{01} \ar[r]^{i}  \ar[d]^{j}  &  X_0 \ar[d] \\
+    	X_1 \ar[r]  &  X,   \\
+    }
+	$$
+	where i and j are closed immersions. Let $f: Y\to X$ be a map of spectral Deligne-Mumford stacks. Let $Y_0= X_0 \times_X Y$, $Y_1 = X_1 \times_X Y$ and let $f_0:Y_0  \to X_0$ and $f_1: Y_1 \to X_1$ be the projections maps. Then: 
+	\begin{enumerate}
+		\item The map f is locally of finite generation to order n if and only if both $f_0$ and $f_1$ are locally of finite generation to order n.
+		\item The map f is locally almost of finite presentation if and only if both $f_0$ and $f_1$ are locally  almost of finite presentation.
+		\item The map f is locally of finite presentation if and only if both $f_0$ and $f_1$ are locally of finite presentation.
+		\item  The map f is \'etale  if and only both $f_0$ and $f_1$ are $\etale$.
+		\item  The map f is  an equivalence  if and only both $f_0$ and $f_1$ are equivalences.
+		\item  The map f is an open immersion  if and only both $f_0$ and $f_1$ are open immersions.
+		\item  The map f is flat  if and only both $f_0$ and $f_1$ are flat.
+		\item  The map f is affine  if and only both $f_0$ and $f_1$ are affine.
+        \item  The map f is an closed immersion  if and only both $f_0$ and $f_1$ are closed immersion.
+        \item   The map f is separated  if and only both $f_0$ and $f_1$ are separated.
+        \item  The map f is n-quasi-compact  if and only both $f_0$ and $f_1$ are n quasi-compact, for $0 \leq n \leq \infty$.
+        \item    The map f is proper  if and only both $f_0$ and $f_1$ are proper.
+	\end{enumerate}
+\end{proposition}
+
+\begin{proposition} \cite[Theorem 16.2.0.1, Proposition 16.2.3.1]{lu-SAG} \label{Deformation of Sheaf}
+	Suppose that we are given a pushout diagram of spectral Deligne-Mumford stacks $\sigma$:
+	$$
+	\xymatrix{
+		X_{01} \ar[r]^{i}  \ar[d]^{j}  &  X_0 \ar[d] \\
+		X_1 \ar[r]  &  X,   \\
+	}
+	$$
+	where i and j are closed immersions. Then the induced diagram of $\infty$-categories
+    $$
+	\xymatrix{
+		\QCoh(X_{01}) \ar[r]^{i}  \ar[d]^{j}  &  \QCoh(X_0) \ar[d] \\
+		\QCoh(X_1) \ar[r]  &  \QCoh(X),   \\
+	}
+	$$
+	determines a fully faithful emdbedding $\theta: \QCoh(X) \to \QCoh(X_0) \times_{\QCoh(X_{01})} \QCoh(X_1)$. Morever, $\theta$ restricts to an equivalence of $\infty$-categories
+	$$
+	\QCoh(X)^{cn} \to \QCoh(X_0)^{cn} \times_{\QCoh(X_{01})^{cn}}  \QCoh(X_1)^{cn}
+	$$
+	Let $\cf \in \QCoh(X)$, and set 
+	$$
+	\cf_0  = j'^{*} \in \QCoh(X_0)  \quad  \cf_1 = i'^{*} \cf \in  \QCoh(X_1).
+	$$
+	Then:
+	\begin{enumerate}
+		\item The quasi-coherent sheaf $\cf$ is n-connective if and only if $\cf_0$ and $\cf_1$ are n-connective.
+		\item  The quasi-coherent sheaf $\cf$ is almost connective if and only $\cf_0$ and $\cf_1$ are almost connective.
+		\item  The quasi-coherent sheaf $\cf$ has Tor-amplitude $\leq n$ if and only $\cf_0$ and $\cf_1$ have Tor-amplitude $\leq n$.
+		\item The quasi-coherent sheaf $\cf$ is flat if and only $\cf_0$ and $\cf_1$ are flat.
+		\item  The quasi-coherent sheaf $\cf$ is perfect  to order n if and only if $\cf_0$ and $\cf_1$ are perfect to order n.
+		\item The quasi-coherent sheaf $\cf$ is almost perfect if and only if $\cf_0$ and $\cf_1$ are almost perfect.
+		\item The quasi-coherent sheaf $\cf$ is perfect  if and only if $\cf_0$ and $\cf_1$ are perfect.
+		\item The quasi-coherent sheaf $\cf$ is locally free of finite rank if and only if $\cf_0$ and $\cf_1$ are locally free of finite rank.
+	\end{enumerate}
+\end{proposition}
+
+
+
+\begin{lemma} \label{Deformation Line Bundle}
+	Suppose that we are given a pushout diagram of spectral Deligne-Mumford stacks $\sigma$:
+	$$
+	\xymatrix{
+		X_{01} \ar[r]^{i}  \ar[d]^{j}  &  X_0 \ar[d] \\
+		X_1 \ar[r]  &  X,   \\
+	}
+	$$
+	where i and j are closed immersions. Let $f: Y\to X$ be a map of spectral Deligne-Mumford stacks. Let $Y_0= X_0 \times_X Y$, $Y_1 = X_1 \times_X Y$ and let $f_0:Y_0  \to X_0$ and $f_1: Y_1 \to X_1$ be the projections maps.
+	
+	If both $f_0$  and  $f_1$ are closed immersions  and determine  line bundles over $Y_0$ and $Y_1$, then f is a closed immersion and determines a line bundle.
+\end{lemma}
+\begin{proof}
+	The closed immersion part is just Lurie's theorem. And for the line bundle part, we notice that by Proposition \ref{Deformation of Sheaf}, f determine a sheaf of locally free of finite rank. To prove it is a line bundle, we can do it locally. By \cite[Theorem 16.2.0.2]{lu-SAG},  for a pullback diagram
+	$$
+	\xymatrix{
+	A \ar[r] \ar[d] &   A_0 \ar[d]   \\
+	A_1    \ar[r]   &   A_{01}   \\
+	}
+	$$
+	of $E_{\infty}$-rings such that $\pi_0 A_0 \to \pi_0 A_{01}  \leftarrow \pi_0 A_1$ are surjective, then there is an equivalence $ F: \Mod^{cn}_A \to \Mod^{cn}_{A_0} \times_{\Mod^{cn}_{A_{01}}}\Mod^{cn}_{A_1}$. Actually this a symmetric monoidal equivalence. Sice we have $F(M)= (A_0 \otimes_A M, A_{0,1} \otimes_A M, A_1 \otimes_A M)$. They satisfying $F(M \otimes N) \simeq  F(M) \otimes F(N)$. But by \cite[Propsition 2.9.4.2]{lu-SAG}, line bundles of $A_1, A_{0,1}$ and $A_0$ determines invertible objects of $\Mod^{cn}_{A_1}, \Mod^{cn}_{A_{0,1}}$ and $\Mod^{cn}_{A_1}$, so determine a invertible object of $\Mod^{cn}_A$,  hence a  line bundle over A. 
+\end{proof}
+
+\begin{proposition}
+	Let $E/R$ be a spectral elliptic curve, then the functor
+	\begin{eqnarray*}
+		\CDiv_{E/R} & :& \CAlg \to \cs  \\
+		&  &	R' \mapsto  \CDiv(E_{R'}/R')
+	\end{eqnarray*}
+	is representable by a spectral algebraic space which is quasi-separated and locally of finite presentation of R.
+	
+\end{proposition}
+
+\begin{proof}
+We use Lurie's spectral Artin's represnetability theorem to prove this theorem. 
+\begin{enumerate}
+	\item For  every discrete commutative $R_0$, the space $\CDiv_{E/R}(R_0)$ is 1-truncated.
+	 
+	 We just notice that $\CDiv_{E/R}(R_0)$, consists of closed immersions $D \to E \times_RR_0$, such that $D$ is flat proper over $R_0$, which is a subspaces of  classical algebraic stacks over $R_0$, so is 1-truncated.
+	 \item  The functor $\CDiv_{E/R}$ is a sheaf for the $\etale$ topology.
+	 
+	 Let $R' \to \{{U_i}\}_{i \in I}$ be an \'etale cover of R, and $U_{\bullet}$ be the associate check simplicial object. We need to prove that the map
+	 $$
+     \CDiv_{E/R}(R')   \to   \lim_{\Delta} \CDiv_{E/R} ( U_{\bullet})
+	 $$
+	 is an equivalence. We only need to prove  for a spectral DM stack $X \to S$ and we have a \'etale cover $T_i \to S$, then
+	 $$
+	  \CDiv(X/S) \to   \lim_{\Delta} \CDiv( X \times_S T_{\bullet})
+	 $$
+	 is a homotopy equivalence. But this obvious, since our conditions of relative Cartier divisor is local for the \'etale topology.
+	 \item   The functor $\CDiv_{E/R}$ is nilcomplete.
+	 
+     We need to prove that the canonical map
+     $$
+     \CDiv_{E/R}(R') \to  \underset{\longleftarrow}{\lim}\CDiv_{E/R}(\tau_{\leq n} R')
+     $$ 
+      This   can be deduced form  the following  results: for a  flat proper, locally almost of finite presentation and separated spectral spectral algebraic space X over a connective $E_{\infty}$-ring S,  we have a equivalence
+      $$
+      \CDiv(X/\Spet S) \to \leftlim\CDiv(X \times_{\Spet S}  \Spet \tau_{\leq n} S).
+      $$
+      Let's prove this equivalence now. For a relative Cartier divisor $D \to X$,  we have the following commutative diagram
+      $$
+      \xymatrix{
+          D \times_{\Spet S} \Spet \tau_{\leq n}S \ar[rrd] \ar[rdd]  &&\\
+       &     X \times_{\Spet S}  \Spet \tau_{\leq n} S \ar[r]  \ar[d]  &  X \ar[d]  \\
+       &     \Spet \tau_{\leq n} S \ar[r]       &   \Spet S   \\   
+      }
+      $$
+      We then get a induce map $D \times_{\Spet S}\Spet \tau_{\leq n}S \to  X \times_{\Spet S} \Spet \tau_{\leq n } S  $. It is easy to prove that this map is a closed immersion, and $ D \times_{\Spet S} \Spet \tau_{\leq n}S \to \Spet S$ is flat proper and  locally almost of finite presentation, since $D \times_{\Spet S} \Spet \tau_{\leq n}S$ is the base change of D along $ \Spet \tau_{\leq n} S \to  \Spet S$.  So $D \times_{\Spet S} \Spet \tau_{\leq n}S$ is a relative Cartier divisor of $X \times_{\Spet S}  \Spet\tau_{\leq n} S$. Thus we have define a functor
+      $$
+       \theta:\CDiv(X/S) \to \leftlim\CDiv(X \times_{\Spet S}  \Spet \tau_{\leq n} S), \quad D \mapsto  \{D \times_{\Spet S} \Spet \tau_{\leq n}S\}
+      $$
+      
+      This functor is fully faithful, since we have equivalence $\SpDM_{/S} \to  \underset{\leftarrow}{\lim}\SpDM_{/\tau_{\leq n} S}$ defined by $X \mapsto X \times_{\Spet S} \Spet \tau_{\leq n}S$ \cite[Proposition 19.4.1.2]{lu-SAG}. To prove the functor $\theta$ is an equivalence, we need to show it is essentially surjective.  Suppose $\{D_n\} \to X \times_{\Spet S} \Spet \tau_{\leq n}S$ is an object in $\leftlim\CDiv(X \times_{\Spet S}  \Spet \tau_{\leq n} S)$. It is a morphism in $ \leftlim \SpDM_{/\tau_{\leq n}S}$, by \cite[Proposition 19.4.1.2]{lu-SAG}, there is a morphism $D \to X$ in $\SpDM_{/S}$, satisfying $D \times_{\Spet S} \Spet \tau_{\leq n}S \to X \times_{\Spet S}\Spet \tau_{\leq n}S $ are just  $D_n \to  X \times_{\Spet S} \Spet \tau_{\leq n} S$. 
+      
+      
+       Next, we need to show  that  such $D \to X$ is relative Cartier divisor. The  condition that $D \to S$ is flat, proper and locally almost of finite presentation follows immediately from \cite[Proposition 19.4.2.1]{lu-SAG}. We need to prove that $D \to X$ is a closed immersion and determine a line bundle over X. Without loss of generality, we may assume that $X= \Spet B$ is affine, so we have closed immersion $D \times_{\Spet S} \Spet \tau_{\leq n} S \to \Spet B \times_{\Spet S} \Spet \tau_{\leq n}S \simeq \Spet ( B \otimes_{S} \tau_{\leq n} S)$, the second equivalence comes from \cite[Proposition 1.4.11.1(3)]{lu-SAG}. And by \cite[Theorem 3.1.2.1]{lu-SAG}, $D \times_{Spet S} \Spet\tau_{\leq n }S$ equals $\Spet B'_n$ for each n, such that $ \pi_0 (B \times_S\tau_{\leq n } S) \to \pi_0 B_n' $ is surjective. Since we have $\tau_{\leq n } S \to B'_n$ is flat, we get $\Spet B'_n = \Spet B'_{n+1} \times_{\Spet \tau_{\leq n+1 } S} \Spet \tau_{\leq n } S  = \Spet (B'_{n+1} \times_{\tau_{\leq n+1 }S} \tau_{\leq n }S) \simeq \Spet \tau_{\leq n } B'_{n+1}$. So we get a  spectrum $B'$ such that $\tau_{\leq n} B' \simeq \Spet B'_n = D \times_{\Spet S}\Spet \tau_{\leq n }S$. Consequently $D = \Spet B'$, and $\pi_0 B  \to \pi_0 B'$ is surjective, so $D = \Spet B' \to \Spet B = X$ is a closed immersion.  To prove that the  associated ideal sheaf of D is a line bundle,  we notice that there is a pullback diagram.
+       $$
+       \xymatrix{
+       I_n  \ar[r]  \ar[d]  &  B \times_S \tau_{\leq n }S  \ar[d]  \\
+       \ *   \ar[r]    &      B' \times_S \tau_{\leq n }S,
+       }
+       $$
+       each $T_n$ is an invertible $B \times_S \tau_{\leq n }S = \tau_{\leq n } B$ module. Passing to the inverse limit, we get
+       $$
+          \xymatrix{
+        	 \leftlim I_n  \ar[r]  \ar[d]  &  B   \ar[d]  \\
+        	\ *   \ar[r]    &      B'.
+        }
+       $$
+       Consequently, we  have $I(D) \simeq \leftlim I_n$.  So by the nilcompleteness of Picard functor \cite[Corollary 19.2.4.6, Propostion 19.2.4.7]{lu-SAG}, We get I is a  invertible B-module. So the associated ideal sheaf of D is a line bundle of X.
+           
+	 \item   The functor $\CDiv_{E/R}$ is cohesive.  
+	 
+	  This statement  follows  from   Proposition \ref{Deformation Line Bundle} and Proposition \ref{Deformation of Stack}.
+	 \item   The functor $\CDiv_{E/R}$ is integrable.
+	 We need to prove that for $R'$ a local Noetherian $\be_{\infty}$-ring which is complete with respect to its maximal ideal $m \subset \pi_0 R$. Then the inclusion functor induces  a homotopy equivalence
+	 $$
+	  \Map_{Fun(\CAlg^{cn},\cs)}(\Spet R', \CDiv_{E/R} ) \to   \Map_{\Fun(\CAlg^{cn},\cs)}(\Spf R', \CDiv_{E/R}).
+	 $$
+   But this follows from the following result: for a  flat proper, locally almost of finite presentation and separated spectral spectral algebraic space X over a connective $E_{\infty}$-ring S, we have equivalence
+   $$
+   \CDiv(X/S) \simeq \CDiv(X \times_{\Spet S} \Spf S)
+   $$
+	Let $\Hilb(X/S)$ denote the  full subcategory of $\SpDM_{/X}$  consists of those $D \to X$, such that $D \to X$ is a closed immersion and $D \to S$ is flat, proper and locally almost of finite presentation.
+	 Then by the formal GAGA theorem \cite[Theorem 8.5.3.4]{lu-SAG} and base change properties of flat, proper and locally almost of finite presentation, we have $\Hilb(X/S) \simeq \Hilb(X \times_{\Spet S} \Spf S)$. To prove the equivalence of relative Cartier divisors, we need to check that   $D \to X$ associated a line bundle over X if and only if $D \times_{\Spet S} \Spf S$ associated a line bundle over $X \times_{\Spet S} \Spf S$.  We notice that since $ X \times_{\Spet S} \Spf S$  is flat over X, we have $I (D \times_{\Spet S} \Spf S) = I(f^* D) \simeq f^*I(D) $ 
+	 $$
+	 \xymatrix{
+	 D \times_{\Spet S} \Spf S   \ar[r]  \ar[d]    &  D  \ar[d]  \\
+	 X \times_{\Spet S} \Spf S  \ar[r]^{\quad \quad f}    &      X.
+	 }
+	 $$
+	 By \cite[Proposition 19.2.4.7]{lu-SAG}, we have an equivalence
+	 $$
+	 \QCoh(X/S)^{\mathrm{aperf,cn}}  \simeq  \QCoh(X \times_{\Spet S} \Spf S)^{\mathrm{aperf,cn}}
+	 $$
+	 By restricting to subcategories spanned by invertible object and using \cite[Proposition 2.9.4.2]{lu-SAG}, we get D  associated a line bundle over X if and only if  $D \times_{\Spet S} \Spf S$ associated a line bundle over $X \times_{\Spet S} \Spf S$.
+	 
+	 \item   The functor $\CDiv_{E/R}$ admits a connective cotangent complex L.
+	  
+	  For a connective $E_{\infty}$-ring S,  and every $\eta \in  \CDiv_{E/R}(S)$, and a connective S-module M. We have a pullback diagram
+	  $$
+	  \xymatrix{
+	  	F_{\eta}(M) \ar[r]  \ar[d]  &  \CDiv_{E/R}(S \oplus M)  \ar[d]\\
+	  	 \eta  \ar[r]      &     \CDiv_{E/R}(S)
+}  
+	  $$
+	  Then we have a functor
+	  $$
+	  F_{\eta}: \Mod_S  \to \cs , \quad   M \mapsto F_{\eta}(M) 
+	  $$ 	  
+	  
+	  We need to prove that this functor is corepresentable.  $\eta$ corresponds a morphism $D \to E \times_R S$, and $E \times_R (S \otimes M)$ is a square 0 extension of $E \times_R S$. So by the classification of first order deformation theory \cite[Propostion 19.4.3.1]{lu-SAG}, the space of  $D'$, which satisfying the pullback diagram
+	  $$
+	  \xymatrix{
+	  D \ar[r]  \ar[d]^{f}  &  D' \ar[d] \\
+	  E \times_R S  \ar[r]  \ar[d]^{p}&  E \times_R (S\oplus M) \ar[d]\\
+	  \Spet S   \ar[r]  & \Spet(S\oplus M) \\
+	}	  
+	  $$
+	   is equivalent to
+	  $$
+	  \Map_{\QCoh(D)}(L_{D/E \times_R S}, \Sigma f^* \mathcal{E})=   \Map_{\QCoh(D)}(L_{D/E \times_R S}, \Sigma f^* \circ p^*M)
+	  $$
+	   Push forward along $p \circ f$, and by \cite[Proposition 6.4.5.3]{lu-SAG} we have 
+	   $$
+	   \Map_{\QCoh(D)}(L_{D/E \times_R S}, \Sigma f^* \circ p^*M) \simeq   \Map_{\QCoh(\Spet S)}(\Sigma^{-1} p_+ \circ f_+ L_{D/E \times_{\Spet R} \Spet S}, M).
+	   $$ 
+	   And by Propsition \ref{Deformation of Stack} and Lemma \ref{Deformation Line Bundle}, any such $D'$  is a closed immersion of $\CDiv_{E/R}(S \oplus M)$ and determine a line bundle of $\CDiv_{E/R}(S \oplus M)$.  Since the diagram
+	   $$
+	   \xymatrix{
+	   D \ar[r]  \ar[d]  &  D' \ar[d]  \\
+ 	   \Spet S  \ar[r]   &  \Spet S \oplus M \\
+ 	   }
+	   $$
+	   is a pullback diagram, so $D'$ is a  square zero extension of D. By Propsition \ref{Deformation of Stack}, we get $D' \to \Spet (S \oplus M)$ is flat, proper and locally almost of finite presentation. 
+	   Combining these facts, we find that
+	   $$
+	   F_{\eta}(M) = Map_{\QCoh(\Spet S)}(\Sigma^{-1} p_+ \circ f_+ L_{D/E \times_{\Spet R} \Spet S}, M).
+	   $$
+	   Consequently, the functor $\CDiv_{E/R}$ satisfies condition (a) of \cite[Example 17.2.4.4]{lu-SAG}  and condition (b) follows form the compatibility of $f_+$ with base change.   It then follows  that $\CDiv_{E/R}$ admits a cotangent complex $L_{\CDiv_{E/R}}$ satisfying $\eta^*L_{\CDiv_{E/R}}= \Sigma^{-1} p_+ \circ f_+ L_{D/E \times_{\Spet R} \Spet S}$. Since the quasi-coherent sheaf $L_{D/E \times_{\Spet R} \Spet S}$ is connective  and almost perfect. The R-module $\Sigma^{-1} p_+ \circ f_+ L_{D/E \times_{\Spet R} \Spet S}$ is (-1) connective.  To show that it is connective, we just notice that D is  a closed immersion  to spectral elliptic, so by \cite[Proposition 2.2.6]{lu-EC1}, the $(-1)$ connective can lift to connective.
+	   \item   $\CDiv_{E/R}$ is locally almost of finite presentation.
+	 
+	 	Consider the functor $\CDiv_{E/R} \to \ * $, it is infitesimally cohesive and admits a cotangent complex which is almost perfect, so by \cite[17.4.2.2]{lu-SAG}, it is locally almost of finite presentation. So $\CDiv_{E/R}$ is locally almost of finite presentation, since $\ *$ is a final object of $\Fun(\CAlg^{cn}, \cs)$. 
+	 
+\end{enumerate}
+\end{proof}
+
+
+\section{Derived Level Structures}
+\subsection{Derived Level Structures of Spectral Curves}
+
+
+
+	Let $C/S$ be a smooth commutative group scheme over S of relative dimension one, A be an abstract finite abelian group. A homomorphism of abstract groups
+$$
+\phi: A \to C(S)
+$$
+is said to be an A-Level structure on $C/S$ if the effective Cartier divisor D in $C/S$  defined by
+$$
+D= \Sigma_{a \in A} [\phi(a)]
+$$
+is a  subgroup G of $C/S$.
+
+The following result due to Katz-Mazur \cite{katz1985arithmetic} give the representability of level structures moduli problems.
+\begin{proposition}(\cite[Proposition 1.6.2]{katz1985arithmetic})
+	Let $C/S$ be a smooth commutative group scheme over S of relative dimension one, A be a abstract finite abelian group. Then the functor
+	$$
+	A-\Level :  \Sch_S  \to \Set
+	$$	
+	$$
+	T \mapsto \text{the set of A-level structures on $C_T/T$}
+	$$
+	is  represented by a closed subscheme of $\underline{\Hom}(A,C) \cong C[N_1] \times_S  \cdots  \times_S C[N_r]$.
+\end{proposition}
+
+
+
+\begin{definition}
+Let $E/R$  be a  spectral  elliptic curve. In the level of objects, a derived level structure is a closed immersion of spectral Deligne-Mumford stacks $\phi: D \to E$, such that $D \to \Spet R$ is flat and proper, the associated ideal sheaf is a line bundle of E and the underlying  morphism $D^{\heartsuit} \to E^{\heartsuit}$ represent a classical level structure  $\phi_0: A \to E^{\heartsuit}(R^{\heartsuit})$.  We let $\Level(\ca, E/R)$ denote the $\infty$-category of derived level structures of $X/S$, whose objects can be viewed as pairs $\phi=(D,\phi)$.
+\end{definition}
+
+\begin{lemma}
+	Let $E/R$ be a spectral elliptic curve  , $\phi_S: D \to E$ be a derived level structure, $T \to S$ be a morphism of nonconnective spectral Deligne-Mumford stacks, then the induce morphism $\phi_S: D_T \to E_T  \simeq E(T)$ is a  derived level structure of $E_T/T$.
+\end{lemma}
+
+\begin{proof}
+	we notice that this lemma is true in the classical case.  We need to prove that, (1) $\phi_S^{\heartsuit}: A \to (E \times_S T)^{\heartsuit}(T_0)$ = $E^{\heartsuit}(T_0)$ is a classical level structure.  But this is just the classical case. (2) $D \to E_T$ is a relative Cartier divisor, this is just Lemma \ref{cartdiv base change}.
+\end{proof}
+
+
+
+
+\begin{lemma}\label{divisor}
+	Let E/R be a spectral elliptic curve, and $D\to E$ be a relative Cartier divisor.  There exists a closed spectral Deligne-Mumford substack $Z \subset \Spet R$, satisfying the following universal property: 
+	
+	For any $\Spet T \to \Spet R$, such that the associated sheaf of $D_T$  is a relative Cartier divisor of  $X_T$ and $(D_T)^{\heartsuit}$ is a subgroup of $(E_T)^{\heartsuit}$, then $\Spet  T $ factor through $Z$.
+\end{lemma}
+
+\begin{proof}
+   For $\Spet T\to  \Spet R$ , it is obvious that $D_T$ is a relative Cartier  divisor of $X_T$. By \cite[Corollarly 1.3.7]{katz1985arithmetic},   we just notice that if $(D_T)^{\heartsuit}/\pi_0 T$ is a subgroup of $(E_T)^{\heartsuit}/\pi_0 T$,  we have $\Spet  \pi_0 T$ must passing through  a closed substack $\Spet Z_0$ of $ \Spet \pi_0 R $. So we find that the required closed substack is just $\Spet (R \otimes_{\pi_ 0 R} Z_0) $.
+\end{proof}
+
+
+
+
+
+\begin{proposition}\label{level rep}
+	Let $E/R$ be a spectral elliptic curve, then the functor
+	\begin{eqnarray*}
+	     \Level_{E/R} & :& \CAlg_R^{cn} \to \cs  \\
+		       &  &	R' \mapsto \Level(\ca , E_{R'}/R')
+	\end{eqnarray*}
+	is represented by a  closed substack $S(A)$ of $\CDiv_{X/R}$. Moreover, $S(A)$ is affine and locally almost of finite presentation over $R$. 
+\end{proposition}
+
+
+\begin{proof}
+   By definition, the functor $\Level_{E/R}$ is a subfunctor of the representable functor $\CDiv_{X/R}$. It is the closed sub-stack of $\CDiv_{X/R}$ such that the associated divisor of degree $ \sharp  (\pi_0 D)$ in $(E \times_R \CDiv_{X/R}/ \CDiv_{X/R})^{\heartsuit}$ 
+   $$
+   \Sigma_{a \in \pi_0 A} \phi_{univ}(a)
+   $$
+    attached to the universal morphism $\phi_{univ}: A \to E(R)$, is a subgroup, then the assertion follows from lemma \ref{divisor}. 
+    
+    To prove  the second part, we consider the map $S(A) \to \Spet R$, they are all spectral algebraic spaces. By \cite[Remark 5.2.0.2]{lu-SAG}, a morphism between spectral algebraic spaces is finite if and only if  its underlying morphism between ordinary spectral algebraic space is finite in ordinary algebraic geometry. So we only need to prove  $S(A)^{\heartsuit}$ is finite over $\Spec \pi_0 R$, but this is just the classical case since $S(A)^{\heartsuit}$ is the relative representable object of the classical level structure, which is finite over $R_0$ by \cite[Corollary 1.6.3]{katz1985arithmetic}.
+\end{proof}
+
+
+
+
+The construction of $X \in \Level(\ca, X/R)$ determines a functor $\Ell(R) \to \cs$ which is calssified by a left fibration $\Ell(A)(R) \to \Ell(R)$. The objects of $\Ell(A)(R)$ can be identified with pairs $(X, \phi)$, where X is a spectral elliptic curve and $\phi$ is a derived level structures of E.
+
+For every $\be_{\infty}$-ring R, we can consider all spectral elliptic curves  over R with derived level structures. This moduli problem can be thought as a functor
+\begin{eqnarray*}
+	\cm_{ell}(\ca) & : &\CAlg^{cn} \to    \cs  \\	                       
+	&  & R  \longmapsto     \cm_{ell}(\ca)(R)   
+\end{eqnarray*}
+where $ \cm_{ell}(\ca)(R)$ is the underlying $\infty$-groupoid of the $\infty$-category of spectral elliptic curves E with a derived level structures $\phi$. 
+
+
+\begin{proposition}
+	The functor $\cm_{ell}(\ca): \CAlg^{cn}  \mapsto  \cs$ is an \'etale sheaf. 
+\end{proposition}
+\begin{proof}
+	Let $R \to \{{U_i}\}_{i \in I}$ be an \'etale cover of R, and $U_{\bullet}$ be the associate check simplicial object.
+	We consider the following diagram
+	$$
+	\xymatrix{
+		\cm_{ell}(\ca)(R)  \ar[r]^{f \quad }  \ar[d]^{p}  &   \lim_{\Delta} \cm_{ell}(\ca)(U_{\bullet})  \ar[d]^{q}  \\
+		\cm_{ell}(R)  \ar[r]^{g \quad}    &   \lim_{\Delta} \cm_{ell}(U_{\bullet})  \\
+	}
+	$$
+	The left map p is  a left  fibration between Kan complex, so is a  Kan fibration \cite[Lemma 2.1.3.3]{lu-HTT}. And the right vertical map is pointwise Kan fibration. By picking a suit model for the homotopy limit we may assume that q is a Kan fibration as well.  We have g is an equivalence by \cite[Lemma 2.4.1]{lu-EC1}. To prove that f is a equivalence. We only need to prove that for every $E \in \Ell(R)$, the map
+	$$
+	p^{-1}{E} \simeq  \Level(\ca , E/R)   \to   \lim_{\Delta} \Level (\ca, E \times_R  U_{\bullet}/U_{\bullet}) \simeq q^{-1}g(E)
+	$$
+	is an equivalence. We have the $\Level(A, E/R)$ as full $\infty$-subcategory of $\CDiv(E/R)$ and
+	$  \lim_{\Delta} \Level(A, E \times_R U_{\bullet})$ as a full subcategory of  
+	$$
+	\lim_{\Delta} \CDiv( E \times_R U_{\bullet}(U_{\bullet})) 
+	$$
+	But $\CDiv$ is an $\etale$ sheaf. So the functor
+	$$
+	\Level(\ca,E/R) \to   \lim_{\Delta} \Level(\ca, E \times_R U_{\bullet}/U_{\bullet}).
+	$$
+	is fully faithful. To prove it is a equivalence, we only need to prove it is essentially surjective.
+	
+	For any  $\{\phi_{U_{\bullet}}: D \to E \times_R {U_{\bullet}}\}$  in $\lim_{\Delta} \Level(\ca, E \times_R U_{\bullet}/U_{\bullet})$.  Clearly, we can find a morphism $\phi_R: D \to E$  in $\CDiv(E/R)$  whose image under the equivalence $\CDiv(E/R) \simeq  \lim_{\Delta}\CDiv( E \times _R U_{\bullet}/U_{\bullet})$ is $\{\phi_{U_{\bullet}}: D \to E \times_R U_{\bullet}\}$. We just need to prove this  $\phi_R: D \to E $ is a derived level structure. This is true since in the classic case, $\Level(A, E^{\heartsuit}(R_0)) \simeq  \lim_{\Delta}\Level(A, E^{\heartsuit}( \tau_{\leq 0}U_{\bullet}))$ and $\phi_R: D \to E$ is already a relative Cartier divisor.
+\end{proof}
+
+
+
+
+\subsection{Derived Level Structures of Spectral p-Divisible Groups}
+
+We let FFG(R) denote the $\infty$-category of the commutative finite flat group schemes. 
+
+\begin{definition}
+	Let R be an $\be_{\infty}$-ring and let S be a set of prime numbers. A $\emph{S-divisible}$ group over A is a functor $X: (\Ab^S_{fin})^{\op} \to FFG(R) $  with the following conditions
+	\begin{enumerate}
+		\item  The commutative finite flat scheme $X(0)$ is trivial.
+		\item For every short exact sequence of finite abelian S-groups, the induced diagram
+		$$
+		\xymatrix{
+			X(M'')  \ar[r]  \ar[d]  & X(M)  \ar[d]   \\
+			X(0)   \ar[r]    &    X(M')               \\
+		}
+		$$
+		
+		is an exact sequence of commutative finite flat schemes over R.
+		\item The S-divisible group has height h, if for every finite abelian S-group M, the commutative finite flat group scheme X(M) has degree $|M|^h$ over R.
+	\end{enumerate}
+	When S consists of only one prime p, then we call it p-divisible group over R.
+\end{definition}
+
+
+\begin{remark}
+	By \cite[Proposition 6.5.8]{lu-EC1}, there  is another equivalent definition of spectral p-divisible group \cite[Definition 6.0.2]{lu-EC2}. A spectral p-divisible group over an connective $\be_{\infty}$-ring R is just a functor
+	$$
+	G: \CAlg_R^{cn} \to \Mod_{\bz}^{cn}
+	$$
+	with the following properties:
+	\begin{enumerate}
+		\item For every $S \in \CAlg_R^{cn}$, the Z-module spectrum $G(S)$ is p-nilpotent, i.e., $G(S)[1/p] \simeq 0$.
+		\item  For every finite Abelian p-group M, the functor
+		$$
+		\CAlg_R^{cn} \to \cs, \quad S \mapsto  \Map_{\Mod_{\bz}}(M, G(S))
+		$$
+		is copresentable by a finite flat R-algebra. 
+		\item  The map $p: G \to G$ is locally surjective with respect to the finite flat topology. That is for every object $R' \in \CAlg_{R'}^{cn}$ and every element $x \in \pi_0 (G(R'))$, there exists a finite flat map $R \to R'$ for which $\Spec(R') \to \Spec (R)$ is surjective and the image of x in $\pi_0 G(R')$ is divisible by p.
+	\end{enumerate}
+\end{remark}
+
+
+
+
+
+
+
+Let $X$ be a spectral p-divisible group of height h over an $\be_{\infty}$-ring R, that is  a functor 
+$$
+X:  \Ab^p_{\mathrm{fin}} \to \mathrm{FFG(R)}.
+$$
+Fro every $p^k \in \Ab^p_{\mathrm{fin}}$, we let $X$ denote the image of $p^k$ of X.
+
+
+
+ Let $G/S$ be a finite flat  S-group scheme of finite presentation, and rank N,  A be a finite abelian group of order N. We say that a group homomorphism
+ $$
+ \phi: A \to G(S)
+ $$
+ is an A-generator of $G/S$, if the  N points $\{\phi(a)\}_{a \in A}$ are a full subset of sections of $G(S)$. In these cases, we say $\phi$ is Drinfeld level structures.
+\begin{definition}
+	 Let G be a spectral p-divisible group over a connective $E_{\infty}$-ring R, of height h. For A  a finite abelian group. An A level structure is a morphism
+	 $$
+	 \phi: D \to G[p^k]
+	 $$
+	 of spectral Deligne-Mumford stacks,  such that $D$ is a relative Cartier divisor of $G[p^k]$, and the underlying morphism $D^{\heartsuit} \to G[p^k]$ is a Drinfeld level structure $A \to G$. We let $\Level(\ca^k, G/R)$ denote the $\infty$-groupoid of level structures of $G/R$.
+\end{definition}
+
+\begin{lemma}\label{divisor p-divisible}
+		Let G/R be a spectral p-divisible group of height h, for any k, we have a nonconnective spectral Deligne-Mumford stack $G[p^k]$.  let $D$ be a relative Cartier divisor of $G$,  such that $D_0$ is an effective Cartier divisor in $G^{\heartsuit}/\pi_0 R$. Then there exists a $\be_{\infty}$-ring  $S_{G/R}$, satisfying the following universal property: 
+		
+		For any $R \to R'$ in $\CAlg^{cn}$, such that $D_{R'}$ is a relative Cartier divisor of $G_{R'}$,  and $(D_{R'})^{\heartsuit}$ is a subgroup of $(G_{R'})^{\heartsuit}$, then $R \to R' $ factor through $S_{G/R}$.
+\end{lemma}
+\begin{proof}
+	  For $\Spet R'  \to \Spet R$,  it  is obvious that that $D_{R'}$ is a relative Cartier divisor of $G_{R'}$. And by \cite[Corollarly 1.3.7]{katz1985arithmetic},   if $(D_{R'})^{\heartsuit}/ \pi_0 R'$ is a subgroup of $(G_{R'})^{\heartsuit}/ \pi_0 R'$,  we have $ \Spec \pi_0 R'  \to \Spec \pi_0R$ must passing through a $\Spec Z$, where $\Spec Z_0$ is a closed subscheme of $\Spec R_0$. So we find that the required closed substack  $S_{G/R}$ is just $ \Spet(Z_0\otimes_{\pi_0 R} R)$.
+	
+\end{proof}	
+
+\begin{proposition} \label{relative rep of p-divisible group}
+	Let H be a spectral p-divisible group  of height h over an $\be_{\infty}$-ring R. Then the following functor
+	$$
+	\Level^{\ca^k}_{H/R}:\CAlg_R \to \cs; \quad    R' \to \Level(A^k, G_{R'})
+	$$
+	is representable by  an affine spectral Deligne-Mumford stack. 
+\end{proposition}
+
+\begin{proof}
+	  We first prove the representability. By definition, the functor $\Level(\ca, G/R)$ is a subfunctor of the representable functor $\CDiv_{G/R}$. 
+	  It is the closed sub-stack of $\CDiv_{G/R}$ such that the associated divisor
+	  $$
+	  \underset{a \in \pi_0 \ca}{\Sigma} \phi_{univ}(a)
+	  $$
+	   of degree $ \sharp  (\pi_0 \ca)$ in $ (G \times_R \CDiv_{G/R}/ \CDiv_{G/R})^{\heartsuit}$, attached to the universal morphism $\phi_{univ}:  D^{\heartsuit} \to G^{\heartsuit}$, is a subgroup. Then the assertion follows from the  lemma \ref{divisor p-divisible}. We denote this closed substack as $\cp_{G/R}$.
+	  
+	  For the affine condition, we need to prove that $\cp_{G/R}$ is finite in the spectral algebraic geometry. By \cite[Remark 5.2.0.2]{lu-SAG}, a morphism between spectral algebraic spaces is finite if and only if  its underlying morphism between ordinary spectral algebraic space is finite in ordinary algebraic geometry. We have $\cp_{G/R}$  and $\Spet R$ are spectral spaces.  So we only need to prove   $\cp_{G/R}^{\heartsuit}$ is finite over $R_0$, but this is just the classical case, which is finite by \cite[Corollary 1.6.3]{katz1985arithmetic}.
+\end{proof}
+
+
+
+\section{Applications}
+\subsection{Spectral Elliptic Curves with Derived Level Structures}
+
+By \cite[Theorem 2.4.1]{lu-EC2}, there exists a spectral Deligne-Mumford stack of spectral elliptic curves
+\begin{eqnarray*}
+	\cm_{ell} & : &\CAlg \to    \cs  \\	                       
+	&  & R  \longmapsto     \cm_{ell}(R)   
+\end{eqnarray*}
+where $\cm_{ell}(R) = \Ell(R)$ is the underline $\infty$-groupoid  of the $\infty$-category of spectral elliptic curves over R.
+
+And we have the  classical Deligne-Mumford stack of classical elliptic curves, which can be viewed as a spectral Deligne-Mumford stack 
+\begin{eqnarray*}
+	\cm^{cl}_{ell} & : &\CAlg \to    \cs  \\	                       
+	&  & R  \longmapsto     \cm^{cl}_{ell}(\pi_0 R)   
+\end{eqnarray*}
+where $\cm^{cl}_{ell}(\pi_0 R)$ is the groupoid  of classical elliptic curves over the commutative ring $\pi_0 R$.
+
+And for A denote  $\Gamma(N), \Gamma_0(N)$, we have the classical  Deligne-Mumford stack of classical elliptic curves with level-A structures, which can also be viewed as a  spectral Deligne-Mumford stack. 
+\begin{eqnarray*}
+	\cm^{cl}_{ell}(A) & : &\CAlg \to    \cs  \\	                       
+	&  & R  \longmapsto     \cm^{cl}_{ell}(A)(\pi_0 R)   
+\end{eqnarray*}
+where $\cm^{cl}_{ell}(A)(\pi_0 R)$ is the groupoid  of classical elliptic curves with level A-structures over the commutative ring $\pi_0 R$.
+
+
+\qquad The first thing we can consider is the moduli problem of spectral elliptic curves with  a classical level structure of its heart. The moduli problem of spectral elliptic curves  with  classical level structures can be thought as a functor. 
+\begin{eqnarray*}
+	\cm_{ell}(A) & : &\CAlg \to    \cs  \\	                       
+	&  & R  \longmapsto     \cm_{ell}(A)(R)   
+\end{eqnarray*}
+where $\cm_{ell}(A)(R)$ for $R \in \CAlg^{cn}$ is defined by the following pullback diagram:
+$$
+\xymatrix{
+	\cm_{ell}(A)(R)  \ar[r]  \ar[d]   &  \cm_{ell}(R) \ar[d]  \\
+	\cm^{cl}_{ell}(A)(R)  \ar[r]  &\cm^{cl}_{ell}(R) 
+}
+$$
+
+It is easy to say that object in $\cm_{ell}(A)(R)$ is  an spectral elliptic curve  E with  a classical level A structure of $E^{\heartsuit}$. We notice that  for a map $\Spet(R) \to \cm_{ell}(A)$, it is equivalent  to maps $\Spet R  \to \cm_{ell}$ and $\Spet R \to \cm^{cl}_{ell}(A)$. That is we have an ordinary elliptic curve $E_0$ over $R^{\heartsuit}$ and a spectral elliptic curve $E$ over R, which is a lift of $E_0$ , and we have a level structure $A  \to E_0$.
+
+
+
+
+
+
+Like the classical case, we want the spectral elliptic curves with classical level structures have the  structure of spectral Deligne-Mumford stacks. We first recall the following spectral Artin's representability theorem.
+\begin{theorem} \cite[Theroem 18.3.0.1]{lu-SAG}
+	Let $X: \CAlg^{cn} \to \cs$ be a functor, if we have a natural transformation $f: X \to \Spec R$, where R is a Noetherian $\be_{\infty}$-ring and $\pi_0 R$ is a Grothendieck ring. For $n \geq 0$, X is representable by a spectral Deligne-Mumford stack which is locally almost of finite presentation over R if and only if the following conditions are satisfied:
+	\begin{enumerate}
+		\item For every discrete commutative ring $R_0$, the space $X(R_0)$ is n-truncated.
+		\item The functor X is a sheaf for the \'etale topology.
+		\item The functor X is nilcomplete, infinitesimally cohesive, and integrable.
+		\item The functor X admits a connective cotangent complex $L_X$.
+		\item The natural transformation f is locally almost of finite presentation.
+	\end{enumerate}	
+\end{theorem}
+
+\begin{proposition}
+	The functor $\cm_{ell}(A)$ is represented by a spectral Deligne-Mumford stack which is locally almost of finite presentation over the sphere spectrum.
+\end{proposition}
+\begin{proof}
+	By \cite[Proposition]{lu-SAG},  the pullback of spectral Deligne-Mumford stacks exists, so we get $\cm_{ell}$ is a spectral Deligne-Mumford stack. 
+	
+\end{proof}
+
+
+
+
+
+
+\quad In the classical case, we know that the elliptic curves with level structures has a structure of Deligne-Mumford stack. We already have the definition of derived level structures, can we still have the similar results? In the following, A will  still denote an abstract abelian group. 
+
+
+
+\begin{definition}
+	Let $X/R$  be a  spectral  elliptic curve. In the level of objects, a derived level structure is a closed immersion of spectral Deligne-Mumford stacks $\phi: D \to X $, such that $D \to \Spet R$ is flat, proper and locally almost of finite presentation, the associated ideal sheaf is a line bundle of X  and the underlying  morphism $D^{\heartsuit} \to X^{\heartsuit}$ represent a classical level structure  $\phi_0: A \to X^{\heartsuit}(\pi_0 R)$.  We let $\Level(\ca, X/R)$ denote the $\infty$-category of derived level structures of $X/S$, whose objects can be viewed as pairs $ \phi=(D,\phi)$.
+\end{definition}
+
+
+
+\begin{proposition}\cite{Ma2023}
+	Let $E/R$ be a spectral elliptic curve, then the functor
+	\begin{eqnarray*}
+		\Level_{E/R} & :& \CAlg_R^{cn} \to \cs  \\
+		&  &	R' \mapsto \Level(\ca , E_{R'}/R')
+	\end{eqnarray*}
+	is represented by a    affine spectral Deligne-Mumford stack closed substack $S(A)$ of $\CDiv_{X/R}$. Moreover, $S(A)$ is affine and locally almost of finite presentation over $R$. 
+\end{proposition}
+
+
+The construction of derived level structures determines a functor $\Ell(R) \to \cs, E \mapsto   \Level(\ca, E/R)$ which is classified by a left fibration $\Ell(\ca)(R) \to \Ell(R)$. The objects of $\Ell(\ca)(R)$ can be identified with pairs $(X, \phi)$, where X is a spectral elliptic curve and $\phi$ is a derived level structures of E.
+
+For every $\be_{\infty}$-ring R, we can consider all spectral elliptic curves  over R with derived level structures. This moduli problem can be thought as a functor
+\begin{eqnarray*}
+	\cm_{ell}(\ca) & : &\CAlg^{cn} \to    \cs  \\	                       
+	&  & R  \longmapsto    \cm_{ell}(\ca)(R) = \Ell(\ca)(R)^{\simeq}   
+\end{eqnarray*}
+where $ \Ell(A)(R)$ is the $\infty$-category of spectral elliptic curves E with a derived level structures $\phi:  \ca  \to E$. And  $\Ell(\ca)(R)^{\simeq}$ is its underlying $\infty$-groupoid. 
+
+
+\begin{proposition}
+	The functor $\cm_{ell}^{de}(A): \CAlg^{cn}  \mapsto  \cs$ is an \'etale sheaf. 
+\end{proposition}
+\begin{proof}
+	Let $R \to {U_i}$ be an \'etale cover of R, and $U_{\bullet}$ be the associate check simplicial object.
+	We consider the following diagram
+	$$
+	\xymatrix{
+		\Ell(\ca)(R)^{\simeq}  \ar[r]^{f}  \ar[d]^{p}  &   \lim_{\Delta} \Ell(\ca)(U_{\bullet})^{\simeq}  \ar[d]^{q}  \\
+		\Ell(R)^{\simeq}  \ar[r]^{g}    &   \lim_{\Delta} \Ell(U_{\bullet})^{\simeq}  \\
+	}
+	$$
+	The left map p is  a left  fibration between Kan complex, so is a  Kan fibration \cite[Lemma 2.1.3.3]{lu-HTT}. And the right vertical map is pointwise Kan fibration. By picking a suit model for the homotopy limit we may assume that q is a Kan fibration as well.  We have g is an equivalence by \cite[Lemma 2.4.1]{lu-EC1}. To prove that f is a equivalence. We only need to prove that for every $E \in \Ell(R)$, the map
+	$$
+	p^{-1}{E} \simeq  \Level(\ca , E/R)   \to   \lim_{\Delta} \Level (\ca, E \times_R  U_{\bullet}/U_{\bullet}) \simeq q^{-1}g(E)
+	$$
+	is an equivalence. We have the $\Level(\ca, E)$ as full $\infty$-subcategory of $\CDiv(E/R)$ and
+	$  \lim_{\Delta} \Level(\ca, E \times_R U_{\bullet})$ as a full subcategory of  
+	$$
+	\lim_{\Delta} \CDiv( E \times_R U_{\bullet}(U_{\bullet})) 
+	$$
+	But $\CDiv$ is an $\etale$ sheaf. So the functor
+	$$
+	\Level(\ca,E/R) \to   \lim_{\Delta} \Level(\ca, E \times_R U_{\bullet}/U_{\bullet}).
+	$$
+	is fully faithful. To prove it is a equivalence, we only need to prove it is essentially surjective.
+	
+	For any  $\{\phi_{U_{\bullet}}: D \to E \times_R {U_{\bullet}}\}$  in $\lim_{\Delta} \Level(\ca, E \times_R U_{\bullet}/U_{\bullet})$.  Clearly, we can find a morphism $\phi_R: D \to E$  in $\CDiv(E/R)$  whose image under the equivalence $\CDiv(E/R) \simeq  \lim_{\Delta}\CDiv( E \times _R U_{\bullet}/U_{\bullet})$ is $\{\phi_{U_{\bullet}}: D \to E \times_R U_{\bullet}\}$. We just need to prove this  $\phi_R: D \to E $ is a derived level structure. This is true since in the classic case, $\Level(A, E^{\heartsuit}(R_0)) \simeq  \lim_{\Delta}\Level(A, E^{\heartsuit}( \tau_{\leq 0}U_{\bullet}))$ and $\phi_R: D \to E$ is already a relative Cartier divisor.
+\end{proof}
+
+
+
+
+\begin{lemma}
+	$\cm_{ell}(\ca): \CAlg^{cn} \to  \cs$  is a nilcomplete functor, i.e., $\cm_{ell}(\ca) (R)$ is the homotopy limit of the following diagram
+	$$
+	\cdots \to  \cm_{ell}(\ca)( \tau_{\leq m}R) \to \cm_{ell}(\ca)(\tau_{\leq m-1} R) \to \cdots \to  \cm_{ell}(\ca)(\tau_{\leq 0}R)
+	$$
+\end{lemma}
+\begin{proof}
+	For a  spectral elliptic curve R,  there is an obvious functor
+	$$
+	\theta: \cm_{ell}(\ca)(R) \to  \underset{\leftarrow n}{\lim}\cm_{ell}(\ca)(\tau_{\leq n}R)
+	$$
+	define by $(E, \phi: D\to E ) \mapsto \{(E \times_{\Spet R}  \Spet \tau_{\leq n}R, \phi_n:  D \times_{\Spet R}  \Spet \tau_{\leq n}R \to E \times_{\Spet R}  \Spet \tau_{\leq n}R) \}_n$. Here we notice that $(E \times_{\Spet R}  \Spet \tau_{\leq n}R, \phi_n:  D \times_{\Spet R}  \Spet \tau_{\leq n}R \to E \times_{\Spet R}  \Spet \tau_{\leq n}R)$. ($\tau_{\leq n }E$ is spectral elliptic curve because flat,  prober, locally of almost finite presentation is stable under base change).
+	
+	
+	First, we prove that $\theta$ is essentially surjective. An object in  $\underset{\leftarrow m}{\lim } \cm_{ell}(\ca)(\tau_{\leq m}R)$  can be written as a diagram 
+	$$
+	\xymatrix{
+		\cdots  \ar[r]  \ar[d]&  D_{n+1} \ar[r] \ar[d]  & D_{n} \ar[r] \ar[d]& D_{ n-1} \ar[r] \ar[d]   & \cdots \ar[r] \ar[d]&   D_0 \ar[d] \\
+		\cdots   \ar[r] &  E_{n+1} \ar[r]    & E_{n}  \ar[r]& E_{ n-1} \ar[r]   & \cdots   \ar[r] &   E_0   \\  
+	}
+	$$
+	
+	where  each $E_n$ is spectral elliptic curve over $\tau_{\leq n}R$ and  $D_n \to  E_n $ is a derived  level structure, and satisfying $D_n = D_{n+1} \times_{\Spet \tau_{\leq n+1}R}  \Spet \tau_{\leq n}R,  E_n = E_{n+1} \times_{\Spet \tau_{\leq n+1}R}  \Spet \tau_{\leq n}R$.  By the  nilcompletness of  $\cm_{ell}$, we get a spectral elliptic curves E, such that  $E \times_R \tau_{\leq n}R \simeq E_n$, and by the nilcompletness of $\mathrm{Var}_{+}$ \cite[Proposition 19.4.2.1]{lu-SAG}, we get a spectral Deligne-Mumford stack D, such that $D_n=D \times_{\Spet R }\Spet \tau_{\leq n}R$. We need to prove the induce map $D \to E$ is a derived level structure, but this follows form nilcompletness of $\Level_{E/R}$.
+	
+	Second, we need to prove that this functor is  fully faithful. Unwinding the definitions, we need to prove that  for every $(X, D_1 \to X), (Y, D_2 \to Y)  \in  \cm_{ell}(\ca)(R)$, the following map is a homotopy equivalence.
+	$$
+	\Map_{\cm_{ell}(\ca)(R)}((X, D_X),(Y, D_Y)) \to  \Map_{\cm_{ell}(\ca)(R)}( \underset{\leftarrow n}{\lim} (X_n, D_{X,n} ),  \underset{\leftarrow n}{\lim}(Y_m, D_{Y,m})).   
+	$$
+	where $X_n $ is $ \tau_{\leq n}X  = X \times_R \tau_{\leq n}R$, and Y, $D_{X,n},D_{Y,n}$ similarly.
+	
+	But we notice that  this  is equivalent to following equivalence
+	$$
+	\Map_{\SpDM_{/R}}((X, D_X),(Y, D_Y)) \to  \underset{\leftarrow n}{\lim}\Map_{\SpDM_{\tau_{\leq n}}}(  (X_n, D_{X,n} ), (Y_n, D_{Y,n})).   
+	$$
+	And this equivalence follows from \cite[Proposition 19.4.1.2]{lu-SAG}
+\end{proof}
+
+
+
+\begin{lemma}
+	$\cm_{ell}(\ca): \CAlg^{cn} \to  \cs$  is a cohesive  functor.
+\end{lemma}
+
+
+\begin{proof}
+	For every pullback diagram
+	$$
+	\xymatrix{
+		D \ar[r]  \ar[d]  &  A  \ar[d]  \\
+		C  \ar[r]    &   B 
+	}
+	$$ 
+	of connective $\be_{\infty}$-rings such  that the underlying homomorphisms $\pi_0 A \to \pi_0 B   \leftarrow \pi_0 C$ are surjective. We need to prove that
+	$$
+	\xymatrix{
+		\cm_{ell}(\ca)(D)\ar[r]  \ar[d]  &    \cm_{ell}(\ca)(A)  \ar[d]  \\
+		\cm_{ell}(\ca)(C) \ar[r]   &    \cm_{ell}(\ca)(B)   \\
+	}
+	$$ 
+	is a pullback diagram. 
+	
+	We have the fowlloing diagram in $\Fun(\CAlg^{cn}, \cs)$,
+	$$
+	\xymatrix{
+		\cm_{ell}(\ca)  \ar[r]^{g} \ar[rd]_{f}  &  \cm_{ell}  \ar[d]^{h} \\
+		&   \ *   \\
+	}
+	$$
+	
+	By \cite[Remark 17.3.7.3]{lu-SAG}, $\cm_{ell}*(\ca)$ is a cohesive fucntor if and only if f is cohesive. Since we  have $\cm_{ell}$ is cohesive functor, h is a cohesive morphism in $\Fun(\CAlg^{cn}, \cs)$. And agian by \cite[Remark 17.3.7.3]{lu-SAG}, f is coheisve if and only if g is cohesive. So we only need to prove that g is a cohesive morphism. But by \cite[Proposition 17.3.8.4]{lu-SAG}  g is cohesive  if  and only if each fiber of g is cohesive, i.e., for $R \in \CAlg^{cn}$ and a point $\eta_E \in \cm_{ell}(R)$ which represents a spectral elliptic curve E,  the functor
+	$$
+	f_{E}: \CAlg^{cn}_R \to \cs, \quad   R' \mapsto  \cm_{ell}(\ca)(R') \times_{\cm_{ell}(R')}\{\eta_E\}
+	$$
+	is cohesive. But we have $R' \mapsto  \cm_{ell}(\ca)(R') \times_{\cm_{ell}(R')}\{\eta_E\} \simeq \Level(\ca, E \times_R R'/R') \simeq \Level_{E/R}(R')$.  The cohesive of $\cm_{ell}(\ca)$  then follows from the cohesive of $\Level_{E/R}$.
+	
+\end{proof}
+
+
+
+\begin{lemma}
+	The fucntor $\cm_{ell}(\ca): \CAlg^{cn} \to  \cs$  is integrable
+\end{lemma}
+
+\begin{proof}
+	We need to prove that for $R$ a local Noetherian $\be_{\infty}$-ring which is complete with respect to its maximal ideal $m \subset \pi_0 R$, then there is an equivalence
+	$$
+	\Map_{Fun(\CAlg^{cn},\cs)}(\Spet R', \cm_{ell}(\ca)) \to   \Map_{\Fun(\CAlg^{cn},\cs)}(\Spf R', \cm_{ell}(\ca)).
+	$$
+	
+	We have the fowlloing diagram in $\Fun(\CAlg^{cn}, \cs)$,
+	$$
+	\xymatrix{
+		\cm_{ell}(\ca)  \ar[r]^{g} \ar[rd]_{f}  &  \cm_{ell}  \ar[d]^{h} \\
+		&   \ *   \\
+	}
+	$$
+	
+	By \cite[Remark 17.3.7.3]{lu-SAG}, $\cm_{ell}*(\ca)$ is a integrable fucntor if and only if f is integrable. Since we  have $\cm_{ell}$ is integrable functor, h is a integrable morphism in $\Fun(\CAlg^{cn}, \cs)$. And agian by \cite[Remark 17.3.7.3]{lu-SAG}, f is coheisve if and only if g is integrable. So we only need to prove that g is a integrable morphism. But by \cite[Proposition 17.3.8.4]{lu-SAG}  g is integrable  if  and only if each fiber of g is integrable, i.e., for $R \in \CAlg^{cn}$ and a point $\eta_E \in \cm_{ell}(R)$ which represents a spectral elliptic curve E,  the functor
+	$$
+	f_{E}: \CAlg^{cn}_R \to \cs, \quad   R' \mapsto  \cm_{ell}(\ca)(R') \times_{\cm_{ell}(R')}\{\eta_E\}
+	$$
+	is integrable. But we have $R' \mapsto  \cm_{ell}(\ca)(R') \times_{\cm_{ell}(R')}\{\eta_E\} \simeq \Level(\ca, E \times_R R'/R') \simeq \Level_{E/R}(R')$.  The integrable of $\cm_{ell}(\ca)$  then follows from the integrable of $\Level_{E/R}$.
+	
+\end{proof}
+
+\begin{lemma}
+	The functor $\cm_{ell}(\ca): \CAlg^{cn}  \mapsto  \cs$  admits a cotangent complex $L_{\cm^{de}_{ell}}$, moreover $L_{\cm^{de}_{ell}}$ is connective and almost perfect. 
+\end{lemma}
+
+\begin{proof}
+	We have a commutative diagram in $\CAlg^{cn} \to \cs$,
+	
+	$$
+	\xymatrix{
+		\cm_{ell}(\ca)  \ar[r]^{g} \ar[rd]_{f}  &  \cm_{ell}  \ar[d]^{h} \\
+		&   \ *   \\
+	}
+	$$
+	Since we have h is infitessimally coheisve and admits a connective  contangent complex, and f,g is infitessimally cohesive. By \cite[Proposition 17.3.9.1]{lu-SAG}, to prove that f admits a contangent complex. We only need to prove g  admits a relative cotangetn complex. By \cite[Proposition 17.2.5.7]{lu-SAG}, a morphism $j:X \to Y$  in $\Fun(\CAlg^{cn},\cs)$ admits a relative contangent complex if and only if, for any corepresentbale $Y'= \Map(R,-): \CAlg^{cn} \to \cs$ and any natural transformation $Y' \to U$,   $j'$ in the following pullback diagram admit a cotangent complex.
+	$$
+	\xymatrix{
+		Y' \times_Y  X  \ar[d]^{j'}  \ar[r]   &   X \ar[d]^{j}  \\
+		Y'  \ar[r]      &         Y \\
+	}
+	$$
+	To prove that  $\cm_{ell}(\ca) \to \cm_{ell}$ admits a cotangent a cotangent complex, we just need to prove that for any $R \in \CAlg^{cn}$, and a spectral elliptic curve E which represents a natural transformations $\Spec R  \to \cm_{ell}$. The functor
+	$$
+	\CAlg_R \to \cs, \quad   R' \mapsto  \cm_{ell}(\ca)(R') \times_{\cm_{ell}(R')} \{\eta_E\}
+	$$
+	But we have $\cm_{ell}(\ca)(R') \times_{\cm_{ell}(R')} \{\eta_E\}= \Level(E \times_R R') = \Level_{E/R}(R')$
+	
+	So  the results of $f: \cm_{ell}(\ca) \to \ca$  admtis a cotangent complex  follows from $\Level_{E/R}$ admits a cotangent complex. And the property of connective and almost perfect also follwos from the property of the cotangent complex of $\Level_{E/R}$. 
+\end{proof}
+
+
+
+
+
+\begin{lemma}
+	The functor $\cm_{ell}(\ca): \CAlg^{cn}  \mapsto  \cs$ is locally almost of finite presentation.
+\end{lemma}
+
+
+\begin{proof}
+	Consider the functor $\cm_{ell}(\ca) \to \ * $, it is infitesimally cohesive and admits a cotangent complex which is almost perfect, so by \cite[17.4.2.2]{lu-SAG}, it is locally almost of finite presentation. So $\cm_{ell}(\ca)$ is locally almost of finite presentation, since $\ *$ is a final object of $\Fun(\CAlg^{cn}, \cs)$. 
+	
+\end{proof}
+
+
+
+
+
+
+
+
+
+\begin{theorem}The functor
+	\begin{eqnarray*}
+		\cm_{ell}(A) & : &\CAlg \to    \cs  \\	                       
+		&  & R  \longmapsto      \cm_{ell}(\ca)(R)=\Ell(\ca)(R)^{\simeq}   
+	\end{eqnarray*}
+	is representable by a spectral Deligne-Mumford stack.
+\end{theorem}
+\begin{proof}
+	By \cite[Theroem 18.3.0.1]{lu-SAG}, we need to prove that the functor $\cm_{ell}(A)$ satisfying the following condition
+	\begin{enumerate}
+		\item For every discrete commutative ring $R_0$, the space $\cm_{ell}(A)(R_0)$ is n-truncated.
+		\item The functor $\cm_{ell}(A)$ is a sheaf for the \'etale topology.
+		\item The functor $\cm_{ell}(A)$ is nilcomplete, infinitesimally cohesive, and integrable.
+		\item The functor $\cm_{ell}(A)$ admits a connective cotangent complex $L_{\cm_{ell}(A)}$.
+		\item The functor $\cm_{ell}(A)$ is locally almost of finite presentation.
+	\end{enumerate}	
+	But these follows form the above series of lemmas.
+\end{proof}
+
+
+
+\subsection{Higher Categorical Lubin-Tate Towers}
+Let $G_0$ be a p-divisible group over a commutative ring $R_0$.  R be an $\be_{\infty}$-ring,  G be a p-divisible group over R. A $G_0$-tagging of G is a triple $(I, \mu, \alpha)$, where I is a finitely generated ideal of definition, $\mu: R_0 \to \pi_0 R$ is a ring homomorphism. and $\alpha: (G_0)_{\pi_0(R)/I} \simeq G_{\pi_0 R/I}$ is an isomorphism of p-divisible group over the commutative ring $\pi_0(R)/I$.
+
+\begin{definition}
+	Let $G_0$ be a p-divisible group over  a commutative ring $R_0$ and let $A$ be an adic $\be_{\infty}$-ring.  A deformation of $G_0$ over R  is a  p-divisible group over R together with an equivalence class of $G_0$-tagging  of G. 
+\end{definition}
+
+
+The collection of deformations  of $G_0$ over an adic $\be_{\infty}$-ring can be organized into an $\infty$-category. The following definition is due to Lurie \cite[Definition 3.1.4]{lu-EC2}.
+
+\begin{definition}
+	For a classical p-divisible $G_0$ over a commutative ring $R_0$. Let $R$ be an adic $\be_{\infty}$-ring. Then the $\infty$-category of deformations of $G_0$ over R is defined as the filtered colimit
+	$$
+	\underset{I}{\colim} BT^p(R) \times_{BT(\pi_0(R)/I)} \Hom(R_0, \pi_0(R)/I).
+	$$
+\end{definition}
+
+
+\begin{lemma}(\cite[lemma 3.1.10]{lu-EC2})
+	Let  $R_0$ be a commutative ring and $G_0$ be a p-divisible group. Let $R$ be  an complete adic $\be_{\infty}$-ring, the $\infty$-category $\Def_{G_0}(R)$ is a Kan complex.
+\end{lemma}
+
+
+By this lemma, we have a functor
+$$
+\Def_{G_0}:  \CAlg_{cpl}^{ad} \to \cs.
+$$
+\begin{theorem}(\cite[Theorem 3.1.15]{lu-EC2})
+	If $R_0$ is Noetherian $F_p$ algebra such that the Frobenius morphism is finite. and $G_0$ be a nonstationary p-divisible group over $R_0$. Then
+	\begin{enumerate}
+		\item   There exists an universal deformation of $G_0$. i.e., there exists  a complete  adic $\be_{\infty}$ $R^{un}_{G_0}$, and a  morphism $\rho:  R^{un}_{G_0}$ such that the functor $\Def_{G_0}$ is corepresentable by $R^{un}_{G_0}$. i.e. , for any complete adic $\be_{\infty}$-ring A， there is a equivalence
+		$$
+		\Map_{\CAlg^{ad}_{cpl}}(R^{un}_{G_0},  R) \to \Def_{G_0}(R).
+		$$
+		
+		\item The $\be_{\infty}$ ring $R^{un}_{G_0}$  is connective and Noetherian.
+		
+		\item The induced map $\pi_0 (\rho): \pi_0 (R^{un}_{G_0}) \to R_0$ is  surjective, and $R^{un}_{G_0}$ is complete with respect to the ideal $\ker(\pi_0 (\rho))$.
+	\end{enumerate}
+\end{theorem}
+
+
+
+
+We consider the following functor
+\begin{eqnarray*}
+	\cm_{\ca^k} &: &\CAlg^{ad}_{cpl} \to \cs  \\
+	&  & R \to  \mathrm{DefLevel}(G_0,R, \ca)
+\end{eqnarray*}
+where $\mathrm{DefLevel}(G_0,R, \ca)$ is  the $\infty$-category whose objects are triples $(G, \rho, \eta)$
+\begin{enumerate}
+	\item G is a  spectral p-divisible group over R.
+	\item $\rho$ is an equivalence of $G_0$ taggings of R.
+	\item $\eta:  D \to G $ is a derived level structure.
+	
+\end{enumerate}
+
+
+
+
+
+\begin{theorem}
+	The functor $\cm_{\ca^k}$ is representable by a  spectral Deligne-Mumford stack $\Spet \cp_{\ca}$ where $\cp_{\ca}$ is an $\be_{\infty}$-ring which is finite  over the unoriented spectral deformation ring of $G_0$.
+\end{theorem}
+
+\begin{proof}
+	We let $E_{univ}/R^{un}_{G_0}$ denote the universal spectral deformation of $G_0/R_0$, for any  spectral deformation G of $G_0$ to R, we get a map of $\be_{\infty}$-ring $ R^{un}_{G_0} \to R $, 
+   It is easy to see that $E_{univ}  \times_{R^{un}_{G_0}} R \simeq G$. So we have the following equivalence
+   $$
+   \Level(\ca^k, G/R) \simeq \Level(\ca^k, E_{univ}  \times_{R^{un}_{G_0}} R ) \simeq \Map_{\CAlg^{ad,cpl}_{R^{un}_{G_0}}}(\cp_{E_{univ}/R^{un}_{G_0}}, R ).
+   $$
+   The last equivalence comes from Proposition \ref{level rep}. Then we consider the following moduli problem
+   $$
+   \CAlg^{ad}_{cpl} \to \cs,  \quad  R \mapsto  \Map_{\CAlg_{R_0}^{ad,cpl}}(\cp_{E_{univ}/R^{un}_{G_0}}, R ).
+   $$
+   For  $R \in  \CAlg_{R_0}^{ad,cpl}$, $Map_{Alg_{R_0}^{ad,cpl}}(\cp_{E_{univ}/R^{un}_{G_0}}, R )$ can  viewed the $\infty$-categories of pairs $(\alpha, f)$, where 
+    $$
+    \alpha:R^{un}_{G_0}\to R
+    $$ 
+    is the  classified map of a spectral p-divisible group G,  which is a  deformation  of $G_0$, that is $\alpha=(G, \rho)$, and $f \in \Map_{\CAlg^{ad,cpl}_{R^{un}_{G_0}}}(\cp_{E_{univ}/R^{un}_{G_0}}, R )= \Level(\ca, E_{univ}  \times_{R^{un}_{G_0}} R ) $ is a derived level structure of $G/R$.  So we get $\Map_{\CAlg_{R_0}^{ad,cpl}}(\cp_{E_{univ}/R^{un}_{G_0}}, R )$ is just the $\infty$-categories of pairs $(G, \rho,\eta)$.  By lemma \ref{relative rep of p-divisible group}, $\cp_{E_{univ}/R^{un}_{G_0}}$ is finite over $R^{un}_{G_0}$. So $\cj \cl_{A} = \cp_{R^{un}_{G_0}}$ is the desired spectrum. 
+   
+   
+\end{proof}
+
+
+
+Although we get spectrum come from a conceptual derived moduli problem, but this spectrum may be complicated. In algebraic topology,  orientation of an $\be_{\infty}$-spectrum make $E_{2}$ page of Atiyah-Hirzebruch  spectral sequence degenerating.
+
+
+Let $G_0$ be a p-divisible group over $R_{G_0}$.
+We consider the following functor
+\begin{eqnarray*}
+	\cm^{or}_{\ca^k} &: &\CAlg^{ad}_{cpl} \to \cs  \\
+	&  & R \to  \mathrm{DefLevel}^{or}(G_0,R, A)\simeq
+\end{eqnarray*}
+where $\mathrm{DefLevel}^{or}(G_0,R, A)$ is the $\infty$-category of pairs $(G, \rho,e, \eta)$, where
+\begin{enumerate}
+	\item G is a spectral p-divisible over R.
+	\item $\rho$ is an equivalence class of $H_0$ taggings  of  R.
+	\item $e:S^2 \to \Omega^{\infty}H^{0}(R)$ is an orientation of the $G^{0}$, where $G^{0}$ is the identity component of H.
+	\item  $\eta:  D\to G $ is a derived level structure.
+\end{enumerate}
+\begin{proposition}
+	The functor $	\cm^{or}_{\ca^k}:\CAlg^{ad}_{cpl} \to \cs$ is representable by a affine spectral Deligne-Mumford stack.
+\end{proposition}
+\begin{proof}
+ Let $\Def^{or}(G_0,R)^{\simeq}$ is the $\infty$-groupoid of pairs $(G, \rho, e)$, where $G$ is a p-divisible of over R, $\rho$ is an equivalence class of $G_0$-taggings of R. By \cite[Theorem 6.0.3, Remark 6.0.7]{lu-EC2}, the functor
+	\begin{eqnarray*}
+		\cm^{or}_{\ca^k} &: &\CAlg^{ad}_{cpl} \to \cs  \\
+		&  & R \to  \Def^{or}(H_0,R)^{\simeq}
+	\end{eqnarray*}
+	is corepresneted by the  orentated deformation ring $R^{or}_{G_0}$, that is we have an equivalence of spaces
+	$$
+	\Map_{\CAlg^{ad}_{cpl}}(R^{or}_{H_0}, R) \simeq \Def^{or}(H_0,R)^{\simeq}.
+	$$
+	Let $E^{or}_{univ}$ be the associated deformation of $H_0$ to $R^{or}_{H_0}$, then it is obvious that $\Spet \cp_{E^{or}_{univ}}$ is the desired  affine spectral Deligne-Mumford stack.
+\end{proof}
+
+
+We call this spectrum Jacquet-Langlands spectrum. It is easy to see that this $ \cj \cl$ admit an action of $GL_n(Z/p^m Z) \times \Aut(G_0)$. In the classical algebraic geometry, the Lubin-Tate can be used to realize the Jacquet-Langlands correspondence \cite{harris2001geometry}. Is there a topological realization of the Jacquet-Langlands correspondence.  Actually, in a recent paper \cite{Salch2023elladicTJ}, they already realized the topological Jacquet-Langlands correspondence. But their method is based on the  Goerss-Hopkins-Miller-Lurie sheaf. They actually consider the degenerate level structure such that representing object is \'etale over representing object of universal deformations.  We hope that over  derived level structure  can also realize the topological Lubin-Tate tower,  and is there a relation with the construction of degenerating level structures.
+
+
+
+\subsection{Topological Lifts of Power Operations Rings}
+We recall the deformation of formal groups. Let $G_0$ be a formal group over a perfect field k with characteristic p, then a deformation of $G_0$ to $R$ is a triple $(G,i, \Phi)$  satisfying 
+\begin{itemize}
+	\item G is a formal group over R,
+	\item There is a map $i: k \to R/m$
+	\item There is an isomorphism $\Phi : \pi^* G \cong i ^* G_0$ of formal groups over $R/m$.
+	
+\end{itemize}
+
+Let R be  a complete local ring whose residue has characteristic p. Let $\phi : R \to R, x \mapsto x^p$ be the Frobenius map. For each formal group G over R, the \textbf{Frobenius isogeny} $\mathrm{Frob}: G \to \phi^* G$ is the homomorphism of formal group over R induced by the relative Frobenius map on rings. We write $\mathrm{Frob}^r: G \to (\phi^r)^* G$ which is the composition $\phi^* (\mathrm{Frob}^{r-1}) \circ \mathrm{Frob}$
+	
+Let $(G,i ,\alpha)$ and $(G',i', \alpha' )$ be two deformation of $G_0$ to R.  A deformation of $\mathrm{Frob}^r$ is a homomorphism $f: G \to G'$ of fromal groups over R  which satisfying
+\begin{enumerate}
+	\item $ i \circ \phi^r = i' $ and $i^* (\phi^r)^* G_0 = (i')^* G_0$.
+	$$
+	\xymatrix{
+		k \ar[r]^{i'} \ar[d]_{\phi^r}  &  R/m  \\
+		K  \ar[ur]^{i}	&    \\
+	}
+	$$
+	\item the square 
+	$$
+	\xymatrix{
+		i^* G_0   \ar[r]^{ i^* ({\Frob^r})}	\ar[d]_{\alpha}  &  i^*(\phi^r)^* G_0   \ar[d]^{\alpha'} \\
+		\pi ^* G  \ar[r]^{\pi^*(f)}   &   \pi^* G'  \\
+	}
+	$$
+	of homomorphisms of formal groups over $R/m$ commutes.
+\end{enumerate}
+
+We let $\mathrm{Def}_R$ denote the category whose objects are deformations fo $G_0$ to R, and whose morphisms are homomorphsim which are deformation of $\Frob ^r$ for some $r \geq 0$. Say that a morphism in $\mathrm{Def}_R$ has \textbf{height} r, if it is a deformation of $\Frob^r$. We let $\mathrm{Sub^r}$ denote the subcategory of  $\Def_R$ whose morphism are deformations of $\Frob^r$  and then quotient the 0 height deformation of Frobenius.
+
+Let G be deformation of $G_0$ to R, then the assignment $f \to \mathrm{Ker}f$ is a one-to-one correspondence between the morphisms  in $\mathrm{Sub}^r_R$ with source G and the finite subgroup of G which have rank $p^r$.
+
+For the following, Let $G_E=G_{univ} / E_0 $ be the universal deformation of $G_0$.
+\begin{theorem}(\cite{strickland1997finite}, \cite{strickland1998morava})
+	Let $G_0/k$ be a formal group of height h over a perfect field k. For each $r>0$, there exists a complete local ring $A_r$ which carries a universal height r morphism $f^r_{univ}: (G_s, i_s, \alpha_s) \to (G_t, i_t, \alpha_t) \in Sub^r(A_r)$. That is the operation $f_{univ}^r \to g^*(f_{univ}^r)$ define a bijective relation from the set of local homomorphism
+	$g: A_r \to R$ to the set $Sub^r_R$. Furthermore, we have:
+	\begin{enumerate}
+		\item $A_0  \approx W(k)[[v_1,\cdots, v_{h-1}]]$.
+		\item  Under the map  $s: A_0 \to A_r$ which classifiers the source of the universal height r map, i.e. $G_s = i^* G_E$, and $A_r$ is finite and free as an $A_0$ module.
+		\item  Under the map $t: A_0  \to A_r$ which classifies the target of the universal height r map, i.e. $G_t =  t^* G_E$.
+		\item 	The ring $A[r]$ in the universal deformation of Frobenuis is isomorphic to $E^0(B \Sigma _{p^r})/I$, i.e,
+		$$
+		A[r] \cong  E^0(B \Sigma _{p^r})/I
+		$$
+		where I is transfer ideal.
+	\end{enumerate}
+\end{theorem}
+So there is a bijection 
+$$
+\{  g: A_r \to R \}  \to  Sub^r(R)
+$$
+given by 
+$$
+g \to  g^* (f^r_{univ}) (g^* G_s  \to g^* G_t).
+$$
+
+The ring $A_r$  plays an important role in the power operations of Morava E-theories. Actually, for a $K(n)$-local $E_n$-algebra R, we have power operations
+$$ 
+\pi_0 R \to  E^0(  B \Sigma_{p^r})/I  \otimes  \pi_0 R  =  A[r]\otimes \pi_0 R. 
+$$
+One can find more detail in \cite{rezk2009congruence}, \cite{rezk2013power}, and computations can be found in \cite{rezk2008power},\cite{zhu2014power}, \cite{zhu2019semistable}.
+
+
+
+
+\begin{proposition}
+	For every r, there exists a $E_{\infty}$-ring $E_{n,r}$, such that $\pi_0 E_{n,r}= A_r$.
+\end{proposition}
+\begin{proof}
+	 Let $A= \bz/p \bz$. For a formal group $G_0$ over a  field  k of characteristic p.   We just need to notice that $\Spet E_{n,r}$ represent the functor $\CAlg^{ad}_{cpl} \to \cs$ by sending an $E_{\infty}$-ring R to  quadruples $(G, \rho, e, \eta)$, where $(G, \rho)$ is  spectral deformation of $G_0$ to R.  e is an orientation of G's identity component $G^0$, and $\eta$ is a derived level structure.
+\end{proof}
+
+
+
+
+
+\bibliographystyle{alpha}
+\bibliography{myreferences}
+\end{document}
