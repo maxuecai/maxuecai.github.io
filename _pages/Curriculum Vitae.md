@@ -1,8 +1,8 @@
 ---
 title: "Curriculum Vitae"
 tags:
-    - user manual
-    - writing format
+    - Mathematician
+    - Physicist
 date: "2024-08-14"
 thumbnail: "/assets/img/thumbnail/sample.png"
 bookmark: true
