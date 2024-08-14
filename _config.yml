@@ -10,10 +10,10 @@ github_username: github
 
 # External API
 giscus_repo: "maxuecai/maxuecai.github.io"
-giscus_repoId: "R_kgDOJ6fqWg"
-giscus_category: "Q&A"
-giscus_categoryId: "DIC_kwDOJ6fqWs4Cc7p7"
-goatcounter_code: byanko77
+giscus_repoId: "R_kgDOK1Y-h"
+giscus_category: "General"
+giscus_categoryId: "DIC_kwDOK1Y-hs4Chnmc"
+goatcounter_code: maxuecai
 google_analytics:
 
 # If your repo name follows the format "<user-name>.github.io", then leave the below blank.
