@@ -12,8 +12,7 @@ bookmark: true
 
 
 		
-I'm a postdoctoral  fellow at Institute for Theoretical Science, Westlake University, China. You can find my [CV](files/Xuecai_CV.pdf) and
-[Research Statement](files/Xuecai_Research.pdf) here.  	
+I'm a postdoctoral  fellow at Institute for Theoretical Science, Westlake University, China. You can find my [CV](files/Xuecai_CV.pdf) and [Research Statement](files/Xuecai_Research.pdf) here.  	
 
 Email: xuecai.u.ma@foxmail.com
 
