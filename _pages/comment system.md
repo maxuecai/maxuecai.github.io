@@ -11,18 +11,10 @@ bookmark: true
 
 # Research
 ---
+1. Derived Level Structures
+  2023-2024. [PDF](files/Derived_Level.pdf)
 
-## Create a github repo
 
-You need a GitHub repository first. If you gonna use *GitHub Pages* for hosting your website, you can choose the corresponding repository (i.e., `[userID].github.io`)
-
-The repository should be **public**, otherwise visitors will not be able to view the discussion.
-
-## Turn on Discussion feature
-
-In your GitHub repository Settings, make sure that `General` > `Features` > `Discussions` feature is enabled.
-
-![Discussion](https://i.ibb.co/P1FV02D/giscus-00.png)
 
 # Notes and Slides
 ---
@@ -37,19 +29,3 @@ SUSTech Graduate Topology Seminar, 2022. [PDF](files/cht.pdf)
 5. Methods of Spectral Algebraic Geometry  in Chromatic Homotopy Theory
 SUSTech Graduate Topology Seminar, 2022. [PDF](files/sag_cht.pdf)
       
-
-## Copy  `_config.yml`
-
-Now, you get the giscus script. Copy the four properties marked with a red box as shown below:
-
-![](https://i.ibb.co/Z154x8P/giscus-04.png)
-
-Paste those values to `_config.yml` placed in the root directory.
-
-```
-# External API
-giscus_repo: "[ENTER REPO HERE]"
-giscus_repoId: "[ENTER REPO ID HERE]"
-giscus_category: "[ENTER CATEGORY NAME HERE]"
-giscus_categoryId: "[ENTER CATEGORY ID HERE]"
-```
