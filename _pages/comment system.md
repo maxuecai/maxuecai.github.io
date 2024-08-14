@@ -15,7 +15,7 @@ bookmark: true
 
 To comment, visitors must authorize the giscus app to post on their behalf using the GitHub OAuth flow. Alternatively, visitors can comment on the GitHub Discussion directly. You can moderate the comments on GitHub.
 
-# Prerequisites
+# Research
 ---
 
 ## Create a github repo
@@ -30,16 +30,32 @@ In your GitHub repository Settings, make sure that `General` > `Features` > `Dis
 
 ![Discussion](https://i.ibb.co/P1FV02D/giscus-00.png)
 
-# Activate Giscus API
+# Notes and Slides
 ---
 
-Follow the steps in [Configuration guide](https://giscus.app/). Make sure the verification of your repository is successful.
-
-![Verification](https://i.ibb.co/y87w8rB/giscus-02.png)
-
-Then, scroll down from the manual page and choose the `Discussion Category` options. You don't need to touch other configs.
-
-![Verification](https://i.ibb.co/0hqLWX0/giscus-03.png)
+    <ol>
+	  <li>
+                 <h4>Analytic Geometry and Homotopy Groups  of the $K(n)$-Local Sphere</h4>
+                  <p >SUSTech Graduate Topology Seminar, 2024. <a href="files/K(n)sphere.pdf" style ="color:blue;text-decoration:underline;">PDF</a> </p>
+           </li>
+	     <li>
+                 <h4>Derived Level Structures</h4>
+                  <p >SUSTech Graduate Topology Seminar, 2024. <a href="files/Derived_Level_Talk.pdf" style ="color:blue;text-decoration:underline;">PDF</a> </p>
+           </li>
+            <li>
+                <h4>Formal Moduli Problems</h4>
+                <p >SUSTech Graduate Topology Seminar, 2023. <a href="files/FMP.pdf" style ="color:blue;text-decoration:underline;">PDF</a> </p>
+           </li>
+           <li>
+                 <h4>An Overview of Chromatic Homotopy Theory</h4>
+                 <p>SUSTech Graduate Topology Seminar, 2022. <a href="files/cht.pdf" style ="color:blue;text-decoration:underline;">PDF</a></p>
+            </li>
+	    <li>
+                 <h4>Methods of Spectral Algebraic Geometry  in Chromatic Homotopy Theory</h4>
+                <p>SUSTech Graduate Topology Seminar, 2022. <a href="files/sag_cht.pdf" style ="color:blue;text-decoration:underline;">PDF</a></p>
+            </li>
+           
+          </ol>
 
 ## Copy  `_config.yml`
 
