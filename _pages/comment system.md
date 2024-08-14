@@ -28,19 +28,19 @@ In your GitHub repository Settings, make sure that `General` > `Features` > `Dis
 ---
 
 
- Analytic Geometry and Homotopy Groups  of the $K(n)$-Local Sphere
+1. Analytic Geometry and Homotopy Groups  of the $K(n)$-Local Sphere
  SUSTech Graduate Topology Seminar, 2024. <a href="files/K(n)sphere.pdf" style ="color:blue;text-decoration:underline;">PDF
           
- Derived Level Structures
+2.Derived Level Structures
 SUSTech Graduate Topology Seminar, 2024. <a href="files/Derived_Level_Talk.pdf" style ="color:blue;text-decoration:underline;">PDF
           
-Formal Moduli Problems
+3.Formal Moduli Problems
 SUSTech Graduate Topology Seminar, 2023. <a href="files/FMP.pdf" style ="color:blue;text-decoration:underline;">PDF
 
- <h4>An Overview of Chromatic Homotopy Theory</h4>
+4.An Overview of Chromatic Homotopy Theory
 SUSTech Graduate Topology Seminar, 2022. <a href="files/cht.pdf" style ="color:blue;text-decoration:underline;">PDF
         
-Methods of Spectral Algebraic Geometry  in Chromatic Homotopy Theory
+5.Methods of Spectral Algebraic Geometry  in Chromatic Homotopy Theory
 SUSTech Graduate Topology Seminar, 2022. <a href="files/sag_cht.pdf" style ="color:blue;text-decoration:underline;">PDF
       
 
