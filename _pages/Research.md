@@ -11,7 +11,7 @@ bookmark: true
 ---
 
 
----
+
 My research interests are algebraic topology, algebraic geometry, number theory and theoritical physics. Currently, I focus on the following problems.
 1. Derive algebraic geometry methods in algebraic topology and number theory, especially derived moduli spaces, derived rings.
 2. Derived rings and p-adic cohomology theories, like topological Hochschild homology, prismatic cohomology.
