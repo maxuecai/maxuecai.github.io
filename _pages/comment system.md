@@ -26,19 +26,15 @@ In your GitHub repository Settings, make sure that `General` > `Features` > `Dis
 
 # Notes and Slides
 ---
-1.Analytic Geometry and Homotopy Groups  of the $K(n)$-Local Sphere
- SUSTech Graduate Topology Seminar, 2024. <a href="files/K(n)sphere.pdf" style ="color:blue;text-decoration:underline;">PDF
-          
-2.Derived Level Structures
-SUSTech Graduate Topology Seminar, 2024. <a href="files/Derived_Level_Talk.pdf" style ="color:blue;text-decoration:underline;">PDF
-          
-3.Formal Moduli Problems
+1. Analytic Geometry and Homotopy Groups  of the $K(n)$-Local Sphere
+ SUSTech Graduate Topology Seminar, 2024. [PDF](files/K(n)sphere.pdf)
+2. Derived Level Structures
+SUSTech Graduate Topology Seminar, 2024. <a href="files/Derived_Level_Talk.pdf" style ="color:blue;text-decoration:underline;">PDF         
+3. Formal Moduli Problems
 SUSTech Graduate Topology Seminar, 2023. <a href="files/FMP.pdf" style ="color:blue;text-decoration:underline;">PDF
-
-4.An Overview of Chromatic Homotopy Theory
-SUSTech Graduate Topology Seminar, 2022. <a href="files/cht.pdf" style ="color:blue;text-decoration:underline;">PDF
-        
-5.Methods of Spectral Algebraic Geometry  in Chromatic Homotopy Theory
+4. An Overview of Chromatic Homotopy Theory
+SUSTech Graduate Topology Seminar, 2022. <a href="files/cht.pdf" style ="color:blue;text-decoration:underline;">PDF        
+5. Methods of Spectral Algebraic Geometry  in Chromatic Homotopy Theory
 SUSTech Graduate Topology Seminar, 2022. <a href="files/sag_cht.pdf" style ="color:blue;text-decoration:underline;">PDF
       
 
