@@ -10,8 +10,7 @@ bookmark: true
 
 
 
-# About Me
----
+
 		
 I'm a postdoctoral  fellow at Westlake University, China.  My research interests are algebraic topology, algebraic geometry, number theory and theoretical physics. You can find my [CV](files/Xuecai_CV.pdf) and
 [Research Statement](files/Xuecai_Research.pdf) here.  Currently, I focus on  the following  problems.	
