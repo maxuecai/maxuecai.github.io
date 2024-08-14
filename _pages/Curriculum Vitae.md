@@ -14,9 +14,25 @@ bookmark: true
 ---
 		
 I'm a postdoctoral  fellow in Westlake University, China.  My research interests are algebraic topology, algebraic geometry, number theory and theoritical physics. You can find my [CV](files/Xuecai_CV.pdf) and
-[Research Statement](files/Xuecai_Research.pdf) here.  Currently, I focus on  the following  problems.</strong></p>	
-1. Derive algebraic geometry methods in algebraic topology and number theory, especially derived moduli spaces, derived rings.
-2. Derived rings and p-adic cohomology theories, like topological Hochschild homology, prismatic cohomology. 
-3. Stolz-Teichner program, which gives a relation between quantum field theories and generalized cohomology theories.
-4. The relation between spectral algebraic geometry and absolute algebraic geometry.
+[Research Statement](files/Xuecai_Research.pdf) here.  Currently, I focus on  the following  problems.	
+
 Email: xuecai.u.ma@foxmail.com</strong></p>
+
+
+## Experience
+1. Westlake  University， 2024.09--Now 
+   Postdoctoral Fellow
+2. Southern University of Science and Technology， 2019.11--2020.08 
+   Research Assistant in Liang Kong's research group}%
+
+## Education
+1. Southern University of Science and Technology，2020.09--2024.06
+   Doctor of Philosophy in Mathematics
+   Advisor: Yifei Zhu
+2. University of Science and Technology of China，2016.09--2018.06
+ Master of Natural Science in Mathematics
+ Advisor: Sen Hu
+3. University of Science and Technology of China，2012.08--2016.06
+   Bachelor of Science in Physics
+   Major: Physics 
+
