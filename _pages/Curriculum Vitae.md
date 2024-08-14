@@ -13,17 +13,17 @@ bookmark: true
 # About Me
 ---
 		
-I'm a postdoctoral  fellow in Westlake University, China.  My research interests are algebraic topology, algebraic geometry, number theory and theoritical physics. You can find my [CV](files/Xuecai_CV.pdf) and
+I'm a postdoctoral  fellow at Westlake University, China.  My research interests are algebraic topology, algebraic geometry, number theory and theoretical physics. You can find my [CV](files/Xuecai_CV.pdf) and
 [Research Statement](files/Xuecai_Research.pdf) here.  Currently, I focus on  the following  problems.	
 
-Email: xuecai.u.ma@foxmail.com</strong></p>
+Email: xuecai.u.ma@foxmail.com
 
 
 ## Experience
 1. Westlake  University， 2024.09--Now 
    Postdoctoral Fellow
 2. Southern University of Science and Technology， 2019.11--2020.08 
-   Research Assistant in Liang Kong's research group}%
+   Research Assistant in Liang Kong's research group
 
 ## Education
 1. Southern University of Science and Technology，2020.09--2024.06
