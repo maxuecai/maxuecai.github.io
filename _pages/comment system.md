@@ -26,9 +26,7 @@ In your GitHub repository Settings, make sure that `General` > `Features` > `Dis
 
 # Notes and Slides
 ---
-
-
-1. Analytic Geometry and Homotopy Groups  of the $K(n)$-Local Sphere
+1.Analytic Geometry and Homotopy Groups  of the $K(n)$-Local Sphere
  SUSTech Graduate Topology Seminar, 2024. <a href="files/K(n)sphere.pdf" style ="color:blue;text-decoration:underline;">PDF
           
 2.Derived Level Structures
