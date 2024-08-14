@@ -9,12 +9,6 @@ thumbnail: "https://i.ibb.co/V9j2Qsg/giscus-Wl0-X3byd-az-U68-1.webp"
 bookmark: true
 ---
 
-[![goatcounter](https://opengraph.githubassets.com/4f866d5b634e7cd5422af77f8dbfb6d48dd288b7c5c18326544c1973210320ed/giscus/giscus){:class="img-lg"}](https://www.goatcounter.com/)
-
-**Giscus** is a free **comments system** powered without your own database. Giscus uses the Github Discussions to store and load associated comments based on a chosen mapping (URL, pathname, title, etc.).
-
-To comment, visitors must authorize the giscus app to post on their behalf using the GitHub OAuth flow. Alternatively, visitors can comment on the GitHub Discussion directly. You can moderate the comments on GitHub.
-
 # Research
 ---
 
@@ -33,29 +27,22 @@ In your GitHub repository Settings, make sure that `General` > `Features` > `Dis
 # Notes and Slides
 ---
 
-    <ol>
-	  <li>
-                 <h4>Analytic Geometry and Homotopy Groups  of the $K(n)$-Local Sphere</h4>
-                  <p >SUSTech Graduate Topology Seminar, 2024. <a href="files/K(n)sphere.pdf" style ="color:blue;text-decoration:underline;">PDF</a> </p>
-           </li>
-	     <li>
-                 <h4>Derived Level Structures</h4>
-                  <p >SUSTech Graduate Topology Seminar, 2024. <a href="files/Derived_Level_Talk.pdf" style ="color:blue;text-decoration:underline;">PDF</a> </p>
-           </li>
-            <li>
-                <h4>Formal Moduli Problems</h4>
-                <p >SUSTech Graduate Topology Seminar, 2023. <a href="files/FMP.pdf" style ="color:blue;text-decoration:underline;">PDF</a> </p>
-           </li>
-           <li>
-                 <h4>An Overview of Chromatic Homotopy Theory</h4>
-                 <p>SUSTech Graduate Topology Seminar, 2022. <a href="files/cht.pdf" style ="color:blue;text-decoration:underline;">PDF</a></p>
-            </li>
-	    <li>
-                 <h4>Methods of Spectral Algebraic Geometry  in Chromatic Homotopy Theory</h4>
-                <p>SUSTech Graduate Topology Seminar, 2022. <a href="files/sag_cht.pdf" style ="color:blue;text-decoration:underline;">PDF</a></p>
-            </li>
-           
-          </ol>
+
+ Analytic Geometry and Homotopy Groups  of the $K(n)$-Local Sphere
+ SUSTech Graduate Topology Seminar, 2024. <a href="files/K(n)sphere.pdf" style ="color:blue;text-decoration:underline;">PDF
+          
+ Derived Level Structures
+SUSTech Graduate Topology Seminar, 2024. <a href="files/Derived_Level_Talk.pdf" style ="color:blue;text-decoration:underline;">PDF
+          
+Formal Moduli Problems
+SUSTech Graduate Topology Seminar, 2023. <a href="files/FMP.pdf" style ="color:blue;text-decoration:underline;">PDF
+
+ <h4>An Overview of Chromatic Homotopy Theory</h4>
+SUSTech Graduate Topology Seminar, 2022. <a href="files/cht.pdf" style ="color:blue;text-decoration:underline;">PDF
+        
+Methods of Spectral Algebraic Geometry  in Chromatic Homotopy Theory
+SUSTech Graduate Topology Seminar, 2022. <a href="files/sag_cht.pdf" style ="color:blue;text-decoration:underline;">PDF
+      
 
 ## Copy  `_config.yml`
 
