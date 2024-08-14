@@ -9,7 +9,7 @@ github_username: github
 
 
 # External API
-giscus_repo: "maxuecai/maxuecai.github.io"
+giscus_repo: "maxuecai/jekyll-theme-satellite"
 giscus_repoId: "R_kgDOJ6fqWg"
 giscus_category: "Q&A"
 giscus_categoryId: "DIC_kwDOJ6fqWs4Cc7p7"
