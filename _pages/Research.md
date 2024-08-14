@@ -1,5 +1,5 @@
 ---
-title: "Manage blog comments with Giscus"
+title: "Research"
 tags:
     - user manual
     - utility
