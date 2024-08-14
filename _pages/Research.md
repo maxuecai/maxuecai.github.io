@@ -19,15 +19,16 @@ My research interests are algebraic topology, algebraic geometry, number theory 
 4. The relation between spectral algebraic geometry and absolute algebraic geometry.
 
 
----
+
 # Research Papers
+---
 1. Derived Level Structures
   2023-2024. [PDF](files/Derived_Level.pdf)
 
 
 
----
 # Notes and Slides
+---
 1. Analytic Geometry and Homotopy Groups  of the $K(n)$-Local Sphere
  SUSTech Graduate Topology Seminar, 2024. [PDF](files/K(n)sphere.pdf)
 2. Derived Level Structures
