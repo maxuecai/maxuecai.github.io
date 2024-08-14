@@ -6,7 +6,7 @@ tags:
     - Number Theory
     - Theoretical Physics
 date: "2024-02-03"
-thumbnail: "/assets/img/thumbnail/book.png"
+thumbnail: "/assets/img/thumbnail/book.jpg"
 bookmark: true
 ---
 
